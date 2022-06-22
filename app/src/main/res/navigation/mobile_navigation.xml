@@ -3,13 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.aryandadhich.urja10.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_houseCaptainFragment"
+            app:destination="@id/houseCaptainFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_splashScreenFragment"
+            app:destination="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_home_to_noInternetFragment"
+            app:destination="@id/noInternetFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_frag_sign_in"
+            app:destination="@id/frag_sign_in" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -41,7 +55,8 @@
             app:destination="@id/frag_sign_in" />
         <action
             android:id="@+id/action_splashScreenFragment_to_nav_home"
-            app:destination="@id/nav_home" />
+            app:destination="@id/nav_home"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_splashScreenFragment_to_noInternetFragment"
             app:destination="@id/noInternetFragment" />
@@ -51,4 +66,8 @@
         android:name="com.aryandadhich.urja10.ui.noInternet.NoInternetFragment"
         android:label="Please Yaar"
         tools:layout="@layout/fragment_no_internet" />
+    <fragment
+        android:id="@+id/houseCaptainFragment"
+        android:name="com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainFragment"
+        android:label="House Captains" />
 </navigation>

@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.MainActivity
 import com.aryandadhich.urja10.databinding.FragmentSignInBinding
 import com.aryandadhich.urja10.utils.stringUtils.Companion.JWT
+import com.aryandadhich.urja10.utils.stringUtils.Companion.isLoggedIn
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 
 
@@ -57,8 +58,7 @@ class SignInFragment : Fragment() {
             viewModel.login()
         }
 
-        (activity as MainActivity).lockDrawer()
-
+//        (activity as MainActivity).lockDrawer()
         return binding.root
     }
 

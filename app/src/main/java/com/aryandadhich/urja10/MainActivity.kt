@@ -6,16 +6,13 @@ import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.aryandadhich.urja10.databinding.ActivityMainBinding
 import android.R.id.toggle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.ui.*
 
 class MainActivity : AppCompatActivity(){
 
@@ -41,10 +38,11 @@ class MainActivity : AppCompatActivity(){
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.houseCaptainFragment, R.id.frag_sign_in
             ), drawerLayout
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
 

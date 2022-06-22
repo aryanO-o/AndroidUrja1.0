@@ -8,5 +8,6 @@ class stringUtils {
         lateinit var JWT: String;
         lateinit var role: String
         var isLoggedIn: Boolean = false
+        var openedAppOnce: Boolean = false
     }
 }

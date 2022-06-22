@@ -26,59 +26,21 @@ class SplashScreenFragment : Fragment() {
     private lateinit var _binding: FragmentSplashScreenBinding
     val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            (activity as AppCompatActivity).supportActionBar?.hide()
-            Log.i("SplashScreenFragment", "onCreateCalled")
-        }
-    }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         Log.i("SplashScreenFragment", "onCreateViewCalled")
-        try {
-            (activity as AppCompatActivity).supportActionBar?.hide()
-        } catch (e: NullPointerException) {
-            Log.i("SplashScreenFragment", "${e.toString()}")
-        }
 
-
+        (activity as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
-
-        Handler(Looper.myLooper()!!).postDelayed({
-            if (isLoggedIn == true) {
+            if (isLoggedIn == false && context?.let { checkForInternet(it) } == true) {
                 findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNavHome())
             } else if (context?.let { checkForInternet(it) } == true) {
                 findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToFragSignIn())
             } else {
                 findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNoInternetFragment())
             }
-
-        }, 2000)
-
-        Handler(Looper.myLooper()!!).postDelayed({
-            binding.splashScreenWelcomeTxt.visibility = View.GONE
-
-        }, 800)
-
-        Handler(Looper.myLooper()!!).postDelayed({
-            binding.splashScreenToTxt.visibility = View.VISIBLE
-        }, 1000)
-
-        Handler(Looper.myLooper()!!).postDelayed({
-            binding.splashScreenToTxt.visibility = View.GONE
-        }, 1500)
-
-        Handler(Looper.myLooper()!!).postDelayed({
-            binding.splashUrjaTxt.visibility = View.VISIBLE
-        }, 1500)
-
-//        (activity as MainActivity).lockDrawer()
-
         return binding.root
     }
 
@@ -87,6 +49,8 @@ class SplashScreenFragment : Fragment() {
         Log.i("SplashScreenFragment", "onDestroyViewCalled")
         (activity as AppCompatActivity).supportActionBar?.show()
     }
+
+
 
     private fun checkForInternet(context: Context): Boolean {
 
@@ -99,6 +63,6 @@ class SplashScreenFragment : Fragment() {
             Toast.makeText(context, "Network Not Available", Toast.LENGTH_LONG).show()
             return false
         }
-
     }
+
 }

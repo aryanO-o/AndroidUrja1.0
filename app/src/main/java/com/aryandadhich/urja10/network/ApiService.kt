@@ -1,5 +1,6 @@
 package com.aryandadhich.urja10.network
 
+import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.signIn.OrganizersGetSignIn
 import com.aryandadhich.urja10.ui.signIn.OrganizersGetSignUp
 import com.aryandadhich.urja10.ui.signIn.OrganizersPostSignIn
@@ -10,10 +11,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 private const val BASE_URL = "http://192.168.137.1:8000/"
 
@@ -34,6 +32,10 @@ interface ApiService {
 
     @POST("organizers-auth/sign-in")
     fun organizersSignIn(@Body organizersPostSignIn: OrganizersPostSignIn): Deferred<OrganizersGetSignIn>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/organizers-info/get/role-players/{rolePlayer}")
+    fun getRolePlayers(@Path("rolePlayer") rolePlayer: String): Deferred<List<HouseCaptain>>
 }
 
 object API {
