@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.aryandadhich.urja10.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.aryandadhich.urja10.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.aryandadhich.urja10.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/frag_sign_in"
+        android:name="com.aryandadhich.urja10.ui.signIn.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.aryandadhich.urja10.ui.splashScreen.SplashScreenFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_frag_sign_in"
+            app:destination="@id/frag_sign_in" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>
