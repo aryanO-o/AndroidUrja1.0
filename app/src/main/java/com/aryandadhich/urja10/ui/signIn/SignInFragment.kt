@@ -1,5 +1,6 @@
 package com.aryandadhich.urja10.ui.signIn
 
+import android.os.Build.VERSION_CODES.S
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.MainActivity
 import com.aryandadhich.urja10.databinding.FragmentSignInBinding
 import com.aryandadhich.urja10.utils.stringUtils.Companion.JWT
@@ -39,7 +41,11 @@ class SignInFragment : Fragment() {
         viewModel.login.observe(viewLifecycleOwner, Observer { login->
             if(login){
                 showLoginToast();
-                viewModel.onLoginComplete()
+                viewModel.onLoginComplete();
+                navigateToHome();
+            }
+            else{
+                showLoginToast();
             }
         }
 
@@ -64,11 +70,12 @@ class SignInFragment : Fragment() {
 
     fun showLoginToast(){
         Toast.makeText(context, "${viewModel.loginMessage}", Toast.LENGTH_SHORT).show()
-        Log.i("SignInFragment", "$JWT")
-        Log.i("SignInFragment", "$role")
     }
 
+
     fun navigateToHome(){
+        findNavController().navigate(SignInFragmentDirections.actionFragSignInToNavHome())
     }
+
 
 }

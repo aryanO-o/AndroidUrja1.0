@@ -1,5 +1,9 @@
 package com.aryandadhich.urja10.ui.splashScreen
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,7 +11,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.databinding.FragmentSplashScreenBinding
@@ -16,7 +23,7 @@ import com.aryandadhich.urja10.utils.stringUtils.Companion.isLoggedIn
 
 class SplashScreenFragment : Fragment() {
 
-    private lateinit var  _binding: FragmentSplashScreenBinding
+    private lateinit var _binding: FragmentSplashScreenBinding
     val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,30 +50,32 @@ class SplashScreenFragment : Fragment() {
         _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
 
         Handler(Looper.myLooper()!!).postDelayed({
-            if(isLoggedIn == true){
+            if (isLoggedIn == true) {
                 findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNavHome())
-            }else{
+            } else if (context?.let { checkForInternet(it) } == true) {
                 findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToFragSignIn())
+            } else {
+                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNoInternetFragment())
             }
 
-        }, 3000)
+        }, 2000)
 
         Handler(Looper.myLooper()!!).postDelayed({
             binding.splashScreenWelcomeTxt.visibility = View.GONE
 
-        }, 1000)
+        }, 800)
 
         Handler(Looper.myLooper()!!).postDelayed({
             binding.splashScreenToTxt.visibility = View.VISIBLE
-        }, 1500)
+        }, 1000)
 
         Handler(Looper.myLooper()!!).postDelayed({
             binding.splashScreenToTxt.visibility = View.GONE
-        }, 2000)
+        }, 1500)
 
         Handler(Looper.myLooper()!!).postDelayed({
             binding.splashUrjaTxt.visibility = View.VISIBLE
-        }, 2500)
+        }, 1500)
 
 //        (activity as MainActivity).lockDrawer()
 
@@ -76,8 +85,20 @@ class SplashScreenFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         Log.i("SplashScreenFragment", "onDestroyViewCalled")
-//        (activity as MainActivity).unlockDrawer()
         (activity as AppCompatActivity).supportActionBar?.show()
     }
 
+    private fun checkForInternet(context: Context): Boolean {
+
+        val ConnectionManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = ConnectionManager.activeNetworkInfo
+        if (networkInfo != null && networkInfo.isConnected == true) {
+            return true
+        } else {
+            Toast.makeText(context, "Network Not Available", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+    }
 }

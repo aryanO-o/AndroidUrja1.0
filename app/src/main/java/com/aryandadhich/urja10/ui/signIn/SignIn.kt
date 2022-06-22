@@ -19,8 +19,8 @@ data class OrganizersPostSignIn(
 
 data class OrganizersGetSignIn(
     val message: String,
-    val token: String,
-    val role: String
+    val token: String = "",
+    val role: String = " "
 )
 
 data class OrganizersPostSignUp(

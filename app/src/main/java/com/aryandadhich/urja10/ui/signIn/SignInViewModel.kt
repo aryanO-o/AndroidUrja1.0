@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aryandadhich.urja10.network.API
 import com.aryandadhich.urja10.utils.stringUtils.Companion.JWT
-import com.aryandadhich.urja10.utils.stringUtils.Companion.errorLogin
 import com.aryandadhich.urja10.utils.stringUtils.Companion.isLoggedIn
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 import kotlinx.coroutines.CoroutineScope
@@ -45,12 +44,15 @@ class SignInViewModel: ViewModel() {
                 JWT = organizersGetSignIn.token
                 role = organizersGetSignIn.role
                 isLoggedIn = true
-                loginMessage = role + " " + JWT
-
-                _login.value = true
+                loginMessage = organizersGetSignIn.message
+                if(loginMessage != "sign in successfully")
+                    _login.value = false
+                else
+                    _login.value = true
 
             }catch (t: Throwable){
-                errorLogin = t.toString();
+                loginMessage =   t.toString();
+                _login.value = false
                 Log.i("SignInViewModel", "${t.toString()}")
             }
         }

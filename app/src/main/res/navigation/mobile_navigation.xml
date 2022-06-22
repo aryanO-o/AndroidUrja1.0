@@ -26,7 +26,11 @@
         android:id="@+id/frag_sign_in"
         android:name="com.aryandadhich.urja10.ui.signIn.SignInFragment"
         android:label="Sign In"
-        tools:layout="@layout/fragment_sign_in" />
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_frag_sign_in_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.aryandadhich.urja10.ui.splashScreen.SplashScreenFragment"
@@ -38,5 +42,13 @@
         <action
             android:id="@+id/action_splashScreenFragment_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.aryandadhich.urja10.ui.noInternet.NoInternetFragment"
+        android:label="Please Yaar"
+        tools:layout="@layout/fragment_no_internet" />
 </navigation>
