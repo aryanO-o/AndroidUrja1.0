@@ -35,11 +35,11 @@ class SplashScreenFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
             if (isLoggedIn == false && context?.let { checkForInternet(it) } == true) {
-                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNavHome())
+//                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNavHome())
             } else if (context?.let { checkForInternet(it) } == true) {
-                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToFragSignIn())
+//                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToFragSignIn())
             } else {
-                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNoInternetFragment())
+//                findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToNoInternetFragment())
             }
         return binding.root
     }

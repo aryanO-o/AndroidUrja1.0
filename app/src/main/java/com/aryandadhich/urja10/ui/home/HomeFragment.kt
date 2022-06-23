@@ -12,9 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.databinding.FragmentHomeBinding
-import com.aryandadhich.urja10.ui.splashScreen.SplashScreenFragmentDirections
 import com.aryandadhich.urja10.utils.stringUtils
-import com.aryandadhich.urja10.utils.stringUtils.Companion.openedAppOnce
 
 class HomeFragment : Fragment() {
 
@@ -67,8 +65,4 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun navigateToSplashScreen(){
-        openedAppOnce = true
-        findNavController().navigate(HomeFragmentDirections.actionNavHomeToSplashScreenFragment());
-    }
 }

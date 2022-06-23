@@ -30,11 +30,6 @@ class SignInViewModel: ViewModel() {
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-
-    init {
-
-    }
-
     fun login(){
         coroutineScope.launch {
             val organizersPostSignIn = OrganizersPostSignIn(loginId, password);

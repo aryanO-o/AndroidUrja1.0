@@ -41,4 +41,5 @@ class HouseCaptainViewModel: ViewModel() {
             }
         }
     }
+
 }

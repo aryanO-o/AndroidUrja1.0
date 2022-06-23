@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.aryandadhich.urja10.databinding.HouseCaptainListItemBinding
 
-class HouseCaptainAdapter: ListAdapter<HouseCaptain, HouseCaptainAdapter.HouseCaptainViewHolder>(DiffCallBack) {
+class HouseCaptainAdapter(val clickListner: HouseCaptainListner): ListAdapter<HouseCaptain, HouseCaptainAdapter.HouseCaptainViewHolder>(DiffCallBack) {
     class HouseCaptainViewHolder(private var binding: HouseCaptainListItemBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(houseCaptain: HouseCaptain){
+        fun bind(houseCaptain: HouseCaptain, clickListner: HouseCaptainListner){
             binding.houseCaptain = houseCaptain
+            binding.clickListner = clickListner
             binding.executePendingBindings()
         }
     }
@@ -36,6 +37,10 @@ class HouseCaptainAdapter: ListAdapter<HouseCaptain, HouseCaptainAdapter.HouseCa
 
     override fun onBindViewHolder(holder: HouseCaptainAdapter.HouseCaptainViewHolder, position: Int) {
         val player = getItem(position)
-        holder.bind(player)
+        holder.bind(player, clickListner)
     }
+}
+
+class HouseCaptainListner(val clickListner: (loginId: String) -> Unit){
+    fun onClick(houseCaptain: HouseCaptain) = clickListner(houseCaptain.loginId)
 }
