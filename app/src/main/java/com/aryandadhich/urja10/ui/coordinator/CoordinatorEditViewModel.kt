@@ -1,4 +1,4 @@
-package com.aryandadhich.urja10.ui.houseCaptain
+package com.aryandadhich.urja10.ui.coordinator
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -10,7 +10,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class HouseCaptainEditViewModel(loginId: String): ViewModel() {
+class CoordinatorEditViewModel(loginId: String): ViewModel() {
+
     var name: String = ""
     var collegeId:String = ""
     var year: Int = 0
@@ -40,46 +41,47 @@ class HouseCaptainEditViewModel(loginId: String): ViewModel() {
     init {
         this.loginId = loginId
         _navigate.value = false;
-        getHouseCaptainInfo()
+        getCoordinatorInfo()
     }
 
-    fun initialiseDetails(houseCaptain: HouseCaptain) {
-        name = houseCaptain.name
-        collegeId = houseCaptain.collegeId
-        year = houseCaptain.year
-        branch = houseCaptain.branch
-        whatsappCountryCode = houseCaptain.whatsappCountryCode
-        whatsappNumber = houseCaptain.whatsappNumber
-        mobileNumberCountryCode = houseCaptain.mobileCountryCode
-        mobileNumber = houseCaptain.mobileNumber
-        loginId = houseCaptain.loginId
-
-        _status.value = true
-    }
-
-    fun getHouseCaptainInfo(){
+    fun getCoordinatorInfo() {
         coroutineScope.launch {
-            var getHouseCaptainDeffered = API.retrofitService.getRolePlayer(loginId)
+            var getCoordinatorDeffered = API.retrofitService.getCoordinator(loginId)
             try {
-                var listResult = getHouseCaptainDeffered.await()
+                var listResult = getCoordinatorDeffered.await()
                 _message.value = "fetch successfull"
-                Log.i("HouseCaptainEditViewModel", "${listResult.toString()}")
+                Log.i("CoordinatorEditViewModel", "${listResult.toString()}")
                 _status.value = true
                 initialiseDetails(listResult)
             }catch (t: Throwable){
                 _status.value = false
                 _message.value = t.message.toString()
-                Log.i("HouseCaptainViewModel", "yaha: ${t.message}")
+                Log.i("CoordinatorEditViewModel", "yaha: ${t.message}")
             }
         }
     }
 
-    fun updateHouseCaptainInfo(){
+    fun initialiseDetails(coordinator: Coordinator) {
+        name = coordinator.name
+        collegeId = coordinator.collegeId
+        year = coordinator.year
+        branch = coordinator.branch
+        whatsappCountryCode = coordinator.whatsappCountryCode
+        whatsappNumber = coordinator.whatsappNumber
+        mobileNumberCountryCode = coordinator.mobileCountryCode
+        mobileNumber = coordinator.mobileNumber
+        loginId = coordinator.loginId
+
+        _status.value = true
+    }
+
+
+    fun updateCoordinatorInfo(){
         coroutineScope.launch {
-            val postHouseCaptain = PostHouseCaptain(loginId, collegeId, branch, year, "house-captain", password, whatsappCountryCode, whatsappNumber, mobileNumberCountryCode, mobileNumber, name );
-            var getHouseCaptainDeffered = API.retrofitService.updateHouseCaptain(loginId, postHouseCaptain)
+            val postCoordinator = PostCoordinator(loginId, collegeId, branch, year, "coordinator", password, whatsappCountryCode, whatsappNumber, mobileNumberCountryCode, mobileNumber, name );
+            var getCoordinatorDeffered = API.retrofitService.updateCoordinator(loginId, postCoordinator)
             try {
-                var listResult = getHouseCaptainDeffered.await()
+                var listResult = getCoordinatorDeffered.await()
                 _message.value = listResult.message
                 _status.value = true
                 _navigate.value = true;
@@ -91,11 +93,11 @@ class HouseCaptainEditViewModel(loginId: String): ViewModel() {
         }
     }
 
-    fun deleteHouseCaptain(){
+    fun deleteCoordinator(){
         coroutineScope.launch {
-            var getHouseCaptainDeffered = API.retrofitService.deleteHouseCaptain(loginId)
+            var getCoordinatorDeffered = API.retrofitService.deleteCoordinator(loginId)
             try {
-                var listResult = getHouseCaptainDeffered.await()
+                var listResult = getCoordinatorDeffered.await()
                 _message.value = listResult.message
                 _status.value = true
                 _navigate.value = true;
@@ -106,9 +108,9 @@ class HouseCaptainEditViewModel(loginId: String): ViewModel() {
             }
         }
     }
-    
+
+
     fun onNavigationComplete(){
         _navigate.value = false;
     }
-
 }

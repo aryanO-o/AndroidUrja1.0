@@ -42,7 +42,7 @@ class HouseCaptainEditFragment : Fragment() {
             callViewModelUpdateBtn()
         }
 
-        binding.deleteFloatingActionButton.setOnClickListener{
+        binding.fragHouseCaptainEditDeleteFab.setOnClickListener{
             onDeleteButtonClicked();
         }
 

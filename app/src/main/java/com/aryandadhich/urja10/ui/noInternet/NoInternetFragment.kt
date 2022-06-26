@@ -13,7 +13,7 @@ import com.aryandadhich.urja10.databinding.FragmentNoInternetBinding
 
 class NoInternetFragment : Fragment() {
 
-    private lateinit var _binding: FragmentNoInternetBinding
+    private var _binding: FragmentNoInternetBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,14 +22,12 @@ class NoInternetFragment : Fragment() {
     ): View? {
         _binding = FragmentNoInternetBinding.inflate(inflater, container, false)
 
-        (activity as MainActivity).lockDrawer()
-
-        return binding.root
+       return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        (activity as MainActivity).unlockDrawer()
+        _binding = null;
     }
 
 }

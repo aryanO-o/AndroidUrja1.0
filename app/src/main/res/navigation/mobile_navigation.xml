@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_home_to_frag_sign_in"
             app:destination="@id/frag_sign_in" />
+        <action
+            android:id="@+id/action_nav_home_to_coordinatorFragment2"
+            app:destination="@id/coordinatorFragment" />
     </fragment>
 
     <fragment
@@ -70,7 +73,7 @@
     <fragment
         android:id="@+id/houseCaptainEditFragment"
         android:name="com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainEditFragment"
-        android:label="HouseCaptainEditFragment" >
+        android:label="Edit House Captain Info">
         <action
             android:id="@+id/action_houseCaptainEditFragment_to_houseCaptainFragment"
             app:destination="@id/houseCaptainFragment"
@@ -78,5 +81,36 @@
         <argument
             android:name="loginId"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/coordinatorFragment"
+        android:name="com.aryandadhich.urja10.ui.coordinator.CoordinatorFragment"
+        android:label="Coordinators" >
+        <action
+            android:id="@+id/action_coordinatorFragment_to_addCoordinatorFragment"
+            app:destination="@id/addCoordinatorFragment" />
+        <action
+            android:id="@+id/action_coordinatorFragment_to_coordinatorEditFragment"
+            app:destination="@id/coordinatorEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCoordinatorFragment"
+        android:name="com.aryandadhich.urja10.ui.coordinator.AddCoordinatorFragment"
+        android:label="Add Coordinator">
+        <action
+            android:id="@+id/action_addCoordinatorFragment_to_coordinatorFragment"
+            app:destination="@id/coordinatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coordinatorEditFragment"
+        android:name="com.aryandadhich.urja10.ui.coordinator.CoordinatorEditFragment"
+        android:label="Edit Coordinator Info"
+        tools:layout="@layout/fragment_coordinator_edit" >
+        <argument
+            android:name="loginId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_coordinatorEditFragment_to_coordinatorFragment"
+            app:destination="@id/coordinatorFragment" />
     </fragment>
 </navigation>

@@ -43,10 +43,10 @@ class HouseCaptainFragment : Fragment() {
 
         if(role == "supervisor")
         {
-            binding.floatingActionButton.visibility = View.VISIBLE
+            binding.addHouseCaptainFab.visibility = View.VISIBLE
         }
 
-        binding.floatingActionButton.setOnClickListener{
+        binding.addHouseCaptainFab.setOnClickListener{
             it.findNavController().navigate(HouseCaptainFragmentDirections.actionHouseCaptainFragmentToAddHouseCaptainFragment())
         }
         return binding.root

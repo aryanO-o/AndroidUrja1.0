@@ -9,6 +9,10 @@
             android:icon="@drawable/people_icon"
             android:title="@string/house_captain" />
         <item
+            android:id="@+id/coordinatorFragment"
+            android:icon="@drawable/people_icon"
+            android:title="@string/coordinator" />
+        <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
