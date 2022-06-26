@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_home_to_coordinatorFragment2"
             app:destination="@id/coordinatorFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_eventCoordinatorFragment"
+            app:destination="@id/eventCoordinatorFragment" />
     </fragment>
 
     <fragment
@@ -112,5 +115,35 @@
         <action
             android:id="@+id/action_coordinatorEditFragment_to_coordinatorFragment"
             app:destination="@id/coordinatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventCoordinatorFragment"
+        android:name="com.aryandadhich.urja10.ui.eventCoordinator.EventCoordinatorFragment"
+        android:label="Event Coordinators" >
+        <action
+            android:id="@+id/action_eventCoordinatorFragment_to_addEventCoordinatorFragment"
+            app:destination="@id/addEventCoordinatorFragment" />
+        <action
+            android:id="@+id/action_eventCoordinatorFragment_to_eventCoordinatorEditFragment"
+            app:destination="@id/eventCoordinatorEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEventCoordinatorFragment"
+        android:name="com.aryandadhich.urja10.ui.eventCoordinator.AddEventCoordinatorFragment"
+        android:label="Add Event Coodinator" >
+        <action
+            android:id="@+id/action_addEventCoordinatorFragment_to_eventCoordinatorFragment"
+            app:destination="@id/eventCoordinatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventCoordinatorEditFragment"
+        android:name="com.aryandadhich.urja10.ui.eventCoordinator.EventCoordinatorEditFragment"
+        android:label="Edit Event Coordinator">
+        <action
+            android:id="@+id/action_eventCoordinatorEditFragment_to_eventCoordinatorFragment"
+            app:destination="@id/eventCoordinatorFragment" />
+        <argument
+            android:name="loginId"
+            app:argType="string" />
     </fragment>
 </navigation>

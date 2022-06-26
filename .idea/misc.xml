@@ -27,10 +27,14 @@
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/app_bar_main.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/coordinator_list_item.xml" value="0.253125" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/event_coordinator_list_item.xml" value="0.253125" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_coordinator.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_event_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_house_captain.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_coordinator_edit.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_event_coordinator.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_event_coordinator_edit.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_gallery.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_house_captain.xml" value="0.264" />

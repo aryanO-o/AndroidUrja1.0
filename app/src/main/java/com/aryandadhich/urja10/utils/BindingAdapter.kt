@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.aryandadhich.urja10.ui.coordinator.Coordinator
 import com.aryandadhich.urja10.ui.coordinator.CoordinatorAdapter
+import com.aryandadhich.urja10.ui.eventCoordinator.EventCoordinator
+import com.aryandadhich.urja10.ui.eventCoordinator.EventCoordinatorAdapter
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainAdapter
 
@@ -13,8 +15,17 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<HouseCaptain>?){
     val adapter = recyclerView.adapter as HouseCaptainAdapter
     adapter.submitList(data)
 }
+
+
 @BindingAdapter("coordinatorListData")
 fun bindRecyclerViewOfCoordinator(recyclerView: RecyclerView, data: List<Coordinator>?){
     val adapter = recyclerView.adapter as CoordinatorAdapter
+    adapter.submitList(data)
+}
+
+
+@BindingAdapter("eventCoordinatorListData")
+fun bindRecyclerViewOfEventCoordinator(recyclerView: RecyclerView, data: List<EventCoordinator>?){
+    val adapter = recyclerView.adapter as EventCoordinatorAdapter
     adapter.submitList(data)
 }
