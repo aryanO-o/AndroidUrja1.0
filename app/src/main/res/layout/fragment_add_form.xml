@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.aryandadhich.urja10.ui.forms.AddFormViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        tools:context=".ui.forms.AddFormFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frag_add_form_to_select_input_layout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="To Select"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag_add_form_to_select_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@{viewModel.toSelect}"
+                android:textColor="@color/blue" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/frag_add_coordinator_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="20dp"
+            android:text="add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_add_form_to_select_input_layout" />
+
+        <Switch
+            android:id="@+id/is_active_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:checked="true"
+            android:text="isActive"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/frag_add_coordinator_add_btn"
+            app:layout_constraintEnd_toStartOf="@+id/frag_add_coordinator_add_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/frag_add_coordinator_add_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

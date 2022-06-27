@@ -10,6 +10,7 @@
         <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/edit_icon.xml" value="0.16" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.16" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/ic_baseline_contact_icon.xml" value="0.16" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/ic_baseline_form_icon.xml" value="0.16" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/ic_baseline_phone_icon.xml" value="0.16" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/ic_launcher_background.xml" value="0.16" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/drawable/ic_menu_camera.xml" value="0.16" />
@@ -25,17 +26,25 @@
         <entry key="..\:/android dev/Urja10/app/src/main/res/font/bungee_shade.xml" value="0.28" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/app_bar_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/available_forms_list_item.xml" value="0.264" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/avialable_forms_list_item.xml" value="0.253125" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/coordinator_list_item.xml" value="0.253125" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/event_coordinator_list_item.xml" value="0.253125" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/filled_forms_list_items.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_event_coordinator.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_form.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_add_house_captain.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_available_forms.xml" value="0.2" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_available_froms.xml" value="0.11302083333333333" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_coordinator_edit.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_event_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_event_coordinator_edit.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_fill_form.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_gallery.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_get_filled_forms.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_house_captain.xml" value="0.264" />
         <entry key="..\:/android dev/Urja10/app/src/main/res/layout/fragment_house_captain_edit.xml" value="0.25416666666666665" />

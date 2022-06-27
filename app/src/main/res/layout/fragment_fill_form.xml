@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.aryandadhich.urja10.ui.forms.FillFormViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.forms.FillFormFragment">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.coordinator.AddCoordinatorFragment">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_name_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:hint="Full Name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_name_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_college_id_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="College mail address"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_name_input_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_college_id_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_year_input_layout"
+                    android:layout_width="100dp"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Year"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_college_id_input_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_year_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_branch_input_layout"
+                    android:layout_width="0dp"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Branch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/frag_fill_form_year_input_layout"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_college_id_input_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_branch_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/frag_fill_form_whatsapp_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_year_input_layout"
+                    android:layout_margin="16dp"
+                    android:textAlignment="center"
+                    android:text="Whatsapp Country Code (without +) and Mobile Number"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_whatsapp_country_code_input_layout"
+                    android:layout_width="75dp"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Country Code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_whatsapp_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_whatsapp_country_code_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_whatsapp_number_input_layout"
+                    android:layout_width="0dp"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/frag_fill_form_whatsapp_country_code_input_layout"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_whatsapp_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_whatsapp_number_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/frag_fill_form_mobile_number_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_whatsapp_country_code_input_layout"
+                    android:layout_margin="16dp"
+                    android:textAlignment="center"
+                    android:text="Mobile Number Country Code (without +) and Number"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_mobile_number_country_code_input_layout"
+                    android:layout_width="75dp"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Country Code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_mobile_number_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_mobile_number_country_code_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/frag_fill_form_mobile_number_input_layout"
+                    android:layout_width="0dp"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/frag_fill_form_mobile_number_country_code_input_layout"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_mobile_number_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/frag_fill_form_mobile_number_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <Button
+                    android:id="@+id/frag_fill_form_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    app:layout_constraintTop_toBottomOf="@id/frag_fill_form_mobile_number_input_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="add"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</layout>

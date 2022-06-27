@@ -1,9 +1,14 @@
 package com.aryandadhich.urja10.network
 
+import android.util.Log
 import com.aryandadhich.urja10.ui.coordinator.Coordinator
 import com.aryandadhich.urja10.ui.coordinator.PostCoordinator
 import com.aryandadhich.urja10.ui.eventCoordinator.EventCoordinator
 import com.aryandadhich.urja10.ui.eventCoordinator.PostEventCoordinator
+import com.aryandadhich.urja10.ui.forms.ApplyForm
+import com.aryandadhich.urja10.ui.forms.FillForm
+import com.aryandadhich.urja10.ui.forms.Form
+import com.aryandadhich.urja10.ui.forms.PostForm
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.houseCaptain.PostHouseCaptain
 import com.aryandadhich.urja10.ui.signIn.OrganizersGetSignIn
@@ -107,6 +112,34 @@ interface ApiService {
     @GET("/organizers-info/get/{loginId}")
     fun getEventCoordinator(@Path("loginId") loginId: String): Deferred<EventCoordinator>
 
+    // forms function calls
+
+    @GET("/forms/get-all-forms")
+    fun getAllForms(): Deferred<List<Form>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/forms/update/{formId}")
+    fun toggleFormIsActive(@Path("formId") formId: Int, @Body postForm: PostForm): Deferred<OrganizersGetSignIn>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/forms/create")
+    fun addForm(@Body postForm: PostForm): Deferred<OrganizersGetSignIn>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @DELETE("/forms/delete/{formId}")
+    fun deleteForm(@Path("formId") formId: Int): Deferred<OrganizersGetSignIn>
+
+    @POST("/participants-info/insert/{collegeId}")
+    fun insertDataInParticipantsInfo(@Path("collegeId") collegeId: String, @Body fillForm: FillForm): Deferred<OrganizersGetSignIn>
+
+    @POST("/forms/apply/{formId}")
+    fun applyToForm( @Path("formId") formId: Int, @Body applyForm: ApplyForm) :Deferred<OrganizersGetSignIn>
+
+    @GET("/participants-info/get/{collegeId}")
+    fun getParticipantsInfo(@Path("collegeId") collegeId: String): Deferred<String>
+
+    @GET("/forms/get-applications/{formId}")
+    fun getFilledForms(@Path("formId") formId: Int): Deferred<List<FillForm>>
 
 }
 

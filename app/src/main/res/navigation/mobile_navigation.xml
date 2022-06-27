@@ -11,20 +11,11 @@
         android:label="Urja1.0"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_nav_home_to_houseCaptainFragment"
-            app:destination="@id/houseCaptainFragment" />
-        <action
             android:id="@+id/action_nav_home_to_noInternetFragment"
             app:destination="@id/noInternetFragment" />
         <action
             android:id="@+id/action_nav_home_to_frag_sign_in"
             app:destination="@id/frag_sign_in" />
-        <action
-            android:id="@+id/action_nav_home_to_coordinatorFragment2"
-            app:destination="@id/coordinatorFragment" />
-        <action
-            android:id="@+id/action_nav_home_to_eventCoordinatorFragment"
-            app:destination="@id/eventCoordinatorFragment" />
     </fragment>
 
     <fragment
@@ -145,5 +136,49 @@
         <argument
             android:name="loginId"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/availableFormsFragment"
+        android:name="com.aryandadhich.urja10.ui.forms.AvailableFormsFragment"
+        android:label="Forms" >
+        <action
+            android:id="@+id/action_availableFormsFragment_to_addFormFragment"
+            app:destination="@id/addFormFragment" />
+        <action
+            android:id="@+id/action_availableFormsFragment_to_fillFormFragment"
+            app:destination="@id/fillFormFragment" />
+        <action
+            android:id="@+id/action_availableFormsFragment_to_getFilledFormsFragment"
+            app:destination="@id/getFilledFormsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addFormFragment"
+        android:name="com.aryandadhich.urja10.ui.forms.AddFormFragment"
+        android:label="Add Form">
+        <action
+            android:id="@+id/action_addFormFragment_to_availableFormsFragment"
+            app:destination="@id/availableFormsFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/fillFormFragment"
+        android:name="com.aryandadhich.urja10.ui.forms.FillFormFragment"
+        android:label="Fill Form">
+        <action
+            android:id="@+id/action_fillFormFragment_to_availableFormsFragment"
+            app:destination="@id/availableFormsFragment" />
+        <argument
+            android:name="formId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/getFilledFormsFragment"
+        android:name="com.aryandadhich.urja10.ui.forms.GetFilledFormsFragment"
+        android:label="GetFilledFormsFragment" >
+        <action
+            android:id="@+id/action_getFilledFormsFragment_to_availableFormsFragment"
+            app:destination="@id/availableFormsFragment" />
+        <argument
+            android:name="formId"
+            app:argType="integer" />
     </fragment>
 </navigation>

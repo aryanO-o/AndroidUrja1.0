@@ -95,7 +95,7 @@ class EventCoordinatorEditViewModel(loginId: String): ViewModel() {
 
     fun deleteEventCoordinator(){
         coroutineScope.launch {
-            var getEventCoordinatorDeffered = API.retrofitService.deleteCoordinator(loginId)
+            var getEventCoordinatorDeffered = API.retrofitService.deleteEventCoordinator(loginId)
             try {
                 var listResult = getEventCoordinatorDeffered.await()
                 _message.value = listResult.message
