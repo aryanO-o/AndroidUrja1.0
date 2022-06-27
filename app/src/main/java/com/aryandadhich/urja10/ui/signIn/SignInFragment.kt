@@ -41,7 +41,6 @@ class SignInFragment : Fragment() {
 
         viewModel.login.observe(viewLifecycleOwner, Observer { login->
             if(login){
-                viewModel.onLoginComplete();
                 navigateToHome();
                 showLoginToast();
             }
