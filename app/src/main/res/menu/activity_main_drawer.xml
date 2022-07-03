@@ -17,6 +17,10 @@
             android:icon="@drawable/people_icon"
             android:title="@string/event_coordinator" />
         <item
+            android:id="@+id/teamFragment"
+            android:icon="@drawable/people_icon"
+            android:title="Teams" />
+        <item
             android:id="@+id/availableFormsFragment"
             android:icon="@drawable/ic_baseline_form_icon"
             android:title="Forms" />

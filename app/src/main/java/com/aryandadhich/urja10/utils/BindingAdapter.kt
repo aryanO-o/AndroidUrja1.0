@@ -1,7 +1,6 @@
 package com.aryandadhich.urja10.utils
 
 import androidx.databinding.BindingAdapter
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.aryandadhich.urja10.ui.coordinator.Coordinator
 import com.aryandadhich.urja10.ui.coordinator.CoordinatorAdapter
@@ -11,6 +10,10 @@ import com.aryandadhich.urja10.ui.forms.AvailableFormsAdapter
 import com.aryandadhich.urja10.ui.forms.FillForm
 import com.aryandadhich.urja10.ui.forms.Form
 import com.aryandadhich.urja10.ui.forms.GetFilledFormAdapter
+import com.aryandadhich.urja10.ui.games.common.players.Player
+import com.aryandadhich.urja10.ui.games.common.players.PlayerListAdapter
+import com.aryandadhich.urja10.ui.games.teamGames.teams.Team
+import com.aryandadhich.urja10.ui.games.teamGames.teams.TeamAdapter
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainAdapter
 
@@ -44,5 +47,17 @@ fun bindRecyclerViewOfAvailableForms(recyclerView: RecyclerView, data: List<Form
 @BindingAdapter("filledFormListData")
 fun bindRecyclerViewOfFilledforms(recyclerView: RecyclerView, data: List<FillForm>?){
     val adapter = recyclerView.adapter as GetFilledFormAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("gamePlayersListData")
+fun bindRecyclerViewOfGamePlayers(recyclerView: RecyclerView, data: List<Player>?){
+    val adapter = recyclerView.adapter as PlayerListAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("teamsListData")
+fun bindRecyclerViewOfTeams(recyclerView: RecyclerView, data: List<Team>?){
+    val adapter = recyclerView.adapter as TeamAdapter
     adapter.submitList(data)
 }

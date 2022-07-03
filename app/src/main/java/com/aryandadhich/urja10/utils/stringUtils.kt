@@ -6,7 +6,7 @@ class stringUtils {
 
     companion object{
         lateinit var JWT: String;
-        var role: String = "participant"
+        var role: String = ""
         var isLoggedIn: Boolean = false
     }
 }

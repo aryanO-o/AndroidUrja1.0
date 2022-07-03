@@ -9,6 +9,10 @@ import com.aryandadhich.urja10.ui.forms.ApplyForm
 import com.aryandadhich.urja10.ui.forms.FillForm
 import com.aryandadhich.urja10.ui.forms.Form
 import com.aryandadhich.urja10.ui.forms.PostForm
+import com.aryandadhich.urja10.ui.games.common.players.Player
+import com.aryandadhich.urja10.ui.games.common.players.PostPlayer
+import com.aryandadhich.urja10.ui.games.teamGames.teams.PostTeam
+import com.aryandadhich.urja10.ui.games.teamGames.teams.Team
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.houseCaptain.PostHouseCaptain
 import com.aryandadhich.urja10.ui.signIn.OrganizersGetSignIn
@@ -140,6 +144,33 @@ interface ApiService {
 
     @GET("/forms/get-applications/{formId}")
     fun getFilledForms(@Path("formId") formId: Int): Deferred<List<FillForm>>
+
+    // game player functions
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/teams/get/all-players/{teamId}")
+    fun getAllGamePlayers(@Path("teamId") teamId: String): Deferred<List<Player>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @PUT("/games/teams/remove/player/{teamId}/{playerId}")
+    fun deleteGamePlayer(@Path("teamId") teamId: String, @Path("playerId") playerId: String): Deferred<Player>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @PUT("/games/teams/add/player/{teamId}")
+    fun addGamePlayer(@Path("teamId") teamId: String, @Body postPlayer: PostPlayer): Deferred<Team>
+
+    // team game teams functions
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/teams/get/all-teams")
+    fun getAllTeams(): Deferred<List<Team>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/teams/add")
+    fun addTeams(@Body postTeam: PostTeam): Deferred<Team>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @DELETE("games/teams/remove/team/{teamId}")
+    fun deleteTeam(@Path("teamId") teamId: String): Deferred<Team>
+
 
 }
 

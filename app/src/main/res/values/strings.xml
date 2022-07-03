@@ -25,4 +25,5 @@
     <string name="event_coordinator_edit_frag_int">%d</string>
 
     <string name="form_to_select">To Select: %s</string>
+    <string name="formmated_jersey_no">%d</string>
 </resources>

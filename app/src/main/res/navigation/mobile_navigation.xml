@@ -181,4 +181,45 @@
             android:name="formId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.aryandadhich.urja10.ui.games.common.players.PlayerFragment"
+        android:label="Players" >
+        <action
+            android:id="@+id/action_playerFragment_to_addGamePlayersFragment"
+            app:destination="@id/addGamePlayersFragment" />
+        <argument
+            android:name="teamId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGamePlayersFragment"
+        android:name="com.aryandadhich.urja10.ui.games.common.players.AddGamePlayersFragment"
+        android:label="Add Player" >
+        <action
+            android:id="@+id/action_addGamePlayersFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+        <argument
+            android:name="teamId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.teams.TeamFragment"
+        android:label="Teams" >
+        <action
+            android:id="@+id/action_teamFragment_to_addTeamFragment"
+            app:destination="@id/addTeamFragment" />
+        <action
+            android:id="@+id/action_teamFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTeamFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.teams.AddTeamFragment"
+        android:label="Add Team">
+        <action
+            android:id="@+id/action_addTeamFragment_to_teamFragment"
+            app:destination="@id/teamFragment" />
+    </fragment>
 </navigation>
