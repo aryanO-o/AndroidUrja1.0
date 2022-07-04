@@ -26,4 +26,5 @@
 
     <string name="form_to_select">To Select: %s</string>
     <string name="formmated_jersey_no">%d</string>
+    <string name="formmated_int">%d</string>
 </resources>

@@ -32,6 +32,9 @@
             android:id="@+id/frag_sign_in"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Sign In" />
-
+        <item
+            android:id="@+id/basketballFragment"
+            android:icon="@drawable/basketball_icon"
+            android:title="Basketball"/>
     </group>
 </menu>

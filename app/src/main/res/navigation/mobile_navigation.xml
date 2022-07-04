@@ -222,4 +222,8 @@
             android:id="@+id/action_addTeamFragment_to_teamFragment"
             app:destination="@id/teamFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/basketballFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballFragment"
+        android:label="BasketballFragment" />
 </navigation>
