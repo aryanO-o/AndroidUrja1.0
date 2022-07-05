@@ -41,10 +41,10 @@ class BasketballFragmentViewModel: ViewModel() {
                         val teamA = gettingTeam1data.await()
                         Log.i("BasketballFragmentViewModel: ", "yaha bhi nai pohocha??" + teamA.toString());
 
-//                        val teamB = gettingTeam2data.await()
-//                        if(teamB != null){
-//                            game.teamB = teamB.houseName;
-//                        }
+                        val teamB = gettingTeam2data.await()
+                        if(teamB != null){
+                            game.teamB = teamB.houseName;
+                        }
                         if (teamA != null) {
                             game.teamA = teamA.houseName
                         };
@@ -78,7 +78,7 @@ class BasketballFragmentViewModel: ViewModel() {
 
             }catch (t: Throwable){
                 _status.value = t.toString();
-                Log.i("BasketballFragmentViewModel", t.toString());
+                Log.i("BasketballFragmentViewModel. yaha wali: ", t.toString());
             }
         }
     }

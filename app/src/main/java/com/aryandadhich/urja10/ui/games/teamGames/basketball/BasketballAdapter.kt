@@ -11,6 +11,7 @@ class BasketballAdapter (val basketballTeamListner: BasketballTeamListner, val d
     class BasketballTeamViewHolder(private var binding: BasketballListItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(basketballGame: BasketballGame, basketballTeamListner: BasketballTeamListner, deleteBasketballTeamListner: DeleteBasketballTeamListner){
             binding.basketball = basketballGame
+            binding.basketballTeamListener = basketballTeamListner
             binding.executePendingBindings()
         }
     }

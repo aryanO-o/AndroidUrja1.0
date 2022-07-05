@@ -9,3 +9,8 @@ data class BasketballGame(
     val teamAScore: Int,
     val teamBScore: Int
 )
+
+data class PostBasketballGame(
+    var teamA: String,
+    var teamB: String
+)

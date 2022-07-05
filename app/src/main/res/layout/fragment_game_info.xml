@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.aryandadhich.urja10.ui.games.common.gameInfo.GameInfoViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.games.common.gameInfo.GameInfoFragment">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_game_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Game"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_game_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.gameName}"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_game_title_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Game Title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_game_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_game_title_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_scorer_college_id_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Scorer College Id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_game_title_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_scorer_college_id_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_referee_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Referee"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_scorer_college_id_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_referee_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_venue_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Venue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_referee_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_venue_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/date_helper_string"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="16dp"
+                android:text="Day as in 00 - 31, Month as in 00 - 12, year as YYYY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_venue_input_layout"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_year_input_layout"
+                android:layout_width="0dp"
+                android:minWidth="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Year"
+                app:layout_constraintStart_toEndOf="@id/frag_game_info_month_input_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_helper_string">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_year_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_month_input_layout"
+                android:layout_width="0dp"
+                android:minWidth="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Month"
+                app:layout_constraintEnd_toStartOf="@id/frag_game_info_year_input_layout"
+                app:layout_constraintStart_toEndOf="@id/frag_game_info_day_input_layout"
+                app:layout_constraintTop_toBottomOf="@id/date_helper_string">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_month_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_day_input_layout"
+                android:layout_width="0dp"
+                android:minWidth="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Day"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_helper_string">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_day_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/time_helper_string"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="16dp"
+                android:text="Hours as in 00 - 23, Minutes as in 00 - 59"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_day_input_layout"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_hour_input_layout"
+                android:layout_width="0dp"
+                android:minWidth="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Time: Hour"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time_helper_string">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_hour_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_minutes_input_layout"
+                android:layout_width="0dp"
+                android:minWidth="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Time: Minutes"
+                app:layout_constraintStart_toEndOf="@id/frag_game_info_hour_input_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time_helper_string">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_minutes_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/frag_game_info_edit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_hour_input_layout"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/frag_game_info_update_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Edit"/>
+
+            <Button
+                android:id="@+id/frag_game_info_update_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/frag_game_info_edit_btn"
+                app:layout_constraintBottom_toBottomOf="@id/frag_game_info_edit_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="update"
+                app:layout_constraintStart_toEndOf="@id/frag_game_info_edit_btn"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

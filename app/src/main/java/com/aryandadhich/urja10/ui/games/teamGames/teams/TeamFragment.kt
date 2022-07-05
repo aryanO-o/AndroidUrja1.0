@@ -31,8 +31,8 @@ class TeamFragment : Fragment() {
         binding.setLifecycleOwner(this);
 
         binding.fragTeamRecyclerView.adapter = TeamAdapter(TeamListner {
-            teamId ->
-            findNavController().navigate(TeamFragmentDirections.actionTeamFragmentToPlayerFragment(teamId))
+            team ->
+            findNavController().navigate(TeamFragmentDirections.actionTeamFragmentToPlayerFragment(team.teamId))
 
         }, DeleteTeamListner {
             teamId ->

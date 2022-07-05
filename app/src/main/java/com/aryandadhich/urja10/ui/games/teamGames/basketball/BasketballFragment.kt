@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.databinding.FragmentBasketballBinding
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 
@@ -25,7 +27,7 @@ class BasketballFragment : Fragment() {
         binding.setLifecycleOwner(this);
 
         binding.basketballFragmentRecyclerView.adapter = BasketballAdapter(BasketballTeamListner {
-
+            navigateToGameInfoFragment(it)
         }, DeleteBasketballTeamListner {
 
         })
@@ -33,7 +35,19 @@ class BasketballFragment : Fragment() {
         if(role == "")
             binding.addBasketballGameFab.visibility = View.GONE;
 
+        binding.addBasketballGameFab.setOnClickListener{
+            navigateToAddBasketballGame()
+        }
+
         return binding.root
+    }
+
+    private fun navigateToGameInfoFragment(eventId: String) {
+        findNavController().navigate(BasketballFragmentDirections.actionBasketballFragmentToGameInfoFragment(eventId))
+    }
+
+    private fun navigateToAddBasketballGame() {
+        findNavController().navigate(BasketballFragmentDirections.actionBasketballFragmentToAddBasketballGameFragment())
     }
 
 }

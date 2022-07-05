@@ -9,9 +9,14 @@ import com.aryandadhich.urja10.ui.forms.ApplyForm
 import com.aryandadhich.urja10.ui.forms.FillForm
 import com.aryandadhich.urja10.ui.forms.Form
 import com.aryandadhich.urja10.ui.forms.PostForm
+import com.aryandadhich.urja10.ui.games.common.gameInfo.GameInfo
+import com.aryandadhich.urja10.ui.games.common.gameInfo.GetGameInfo
+import com.aryandadhich.urja10.ui.games.common.gameInfo.GetGameInfoOtherDetails
+import com.aryandadhich.urja10.ui.games.common.gameInfo.PostGameInfo
 import com.aryandadhich.urja10.ui.games.common.players.Player
 import com.aryandadhich.urja10.ui.games.common.players.PostPlayer
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballGame
+import com.aryandadhich.urja10.ui.games.teamGames.basketball.PostBasketballGame
 import com.aryandadhich.urja10.ui.games.teamGames.teams.PostTeam
 import com.aryandadhich.urja10.ui.games.teamGames.teams.Team
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
@@ -176,10 +181,33 @@ interface ApiService {
     @GET("/games/teams/get/team-by-id/{teamId}")
     fun getTeamById(@Path("teamId") teamId: String): Deferred<Team?>
 
-    // basketball post
+    // game info functions
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/get/game-by-event-id/{eventId}")
+    fun getGameDetails(@Path("eventId") eventId: String): Deferred<GetGameInfo>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/add")
+    fun createGameDetails(@Body postGameInfo: PostGameInfo): Deferred<GetGameInfo>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/game-info/get/{gameInfoId}")
+    fun getGameInfoOtherDetails(@Path("gameInfoId") gameInfoId: String): Deferred<GetGameInfoOtherDetails>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @PUT("/games/update/{gameInfoId}")
+    fun updateGameDetails(@Path("gameInfoId") gameInfoId: String, @Body gameInfo: PostGameInfo): Deferred<GetGameInfo>
+
+    // basketball game functions
     @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
     @GET("/games/basketball/get/all")
     fun getAllBasketballGames(): Deferred<List<BasketballGame>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/basketball/add")
+    fun addBasketballGame(@Body postBasketballGame: PostBasketballGame): Deferred<BasketballGame>
+
+
 
 
 }

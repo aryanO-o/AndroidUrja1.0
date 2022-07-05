@@ -225,5 +225,31 @@
     <fragment
         android:id="@+id/basketballFragment"
         android:name="com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballFragment"
-        android:label="BasketballFragment" />
+        android:label="Basketball Games">
+        <action
+            android:id="@+id/action_basketballFragment_to_addBasketballGameFragment"
+            app:destination="@id/addBasketballGameFragment" />
+        <action
+            android:id="@+id/action_basketballFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBasketballGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.basketball.AddBasketballGameFragment"
+        android:label="Add Basketball Game">
+        <action
+            android:id="@+id/action_addBasketballGameFragment_to_basketballFragment"
+            app:destination="@id/basketballFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameInfoFragment"
+        android:name="com.aryandadhich.urja10.ui.games.common.gameInfo.GameInfoFragment"
+        android:label="GameInfoFragment" >
+        <action
+            android:id="@+id/action_gameInfoFragment_to_basketballFragment"
+            app:destination="@id/basketballFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -49,8 +49,8 @@ class TeamAdapter(val teamListner: TeamListner, val deleteTeamListner: DeleteTea
     }
 }
 
-class TeamListner(val clickListner: (teamId: String) -> Unit){
-    fun onClick(team: Team) = clickListner(team.teamId)
+class TeamListner(val clickListner: (team: Team) -> Unit){
+    fun onClick(team: Team) = clickListner(team)
 }
 
 class DeleteTeamListner(val clickListner: (teamId: String) -> Unit){
