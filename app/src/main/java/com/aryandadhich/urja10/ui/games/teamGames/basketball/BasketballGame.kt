@@ -14,3 +14,8 @@ data class PostBasketballGame(
     var teamA: String,
     var teamB: String
 )
+
+data class PostBasketballScoreUpdates(
+    var teamAScore: Int,
+    var teamBScore: Int
+)

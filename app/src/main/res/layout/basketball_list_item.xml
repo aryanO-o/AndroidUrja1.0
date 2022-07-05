@@ -13,8 +13,8 @@
             type="com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballTeamListner" />
 
         <variable
-            name="deleteBasketballTeamListner"
-            type="com.aryandadhich.urja10.ui.games.teamGames.basketball.DeleteBasketballTeamListner" />
+            name="updateBasketballListener"
+            type="com.aryandadhich.urja10.ui.games.teamGames.basketball.UpdateBasketballGameListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,6 +101,16 @@
             app:layout_constraintStart_toEndOf="@+id/team_b_name"
             app:layout_constraintTop_toTopOf="@id/team_b_name"
             tools:text="24" />
+
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="16dp"
+            android:onClick="@{()-> updateBasketballListener.onUpdateClicked(basketball)}"
+            android:text="update"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

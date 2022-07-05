@@ -1,17 +1,23 @@
 package com.aryandadhich.urja10.ui.games.teamGames.basketball
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.aryandadhich.urja10.databinding.BasketballListItemBinding
+import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 
-class BasketballAdapter (val basketballTeamListner: BasketballTeamListner, val deleteBasketballTeamListner: DeleteBasketballTeamListner): ListAdapter<BasketballGame, BasketballAdapter.BasketballTeamViewHolder>(DiffCallBack) {
+class BasketballAdapter (val basketballTeamListner: BasketballTeamListner, val updateBasketballGameListener: UpdateBasketballGameListener): ListAdapter<BasketballGame, BasketballAdapter.BasketballTeamViewHolder>(DiffCallBack) {
     class BasketballTeamViewHolder(private var binding: BasketballListItemBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(basketballGame: BasketballGame, basketballTeamListner: BasketballTeamListner, deleteBasketballTeamListner: DeleteBasketballTeamListner){
+        fun bind(basketballGame: BasketballGame, basketballTeamListner: BasketballTeamListner, updateBasketballGameListener: UpdateBasketballGameListener){
             binding.basketball = basketballGame
             binding.basketballTeamListener = basketballTeamListner
+            binding.updateBasketballListener = updateBasketballGameListener;
+            if(role == ""){
+                binding.updateBtn.visibility = View.GONE
+            }
             binding.executePendingBindings()
         }
     }
@@ -41,7 +47,7 @@ class BasketballAdapter (val basketballTeamListner: BasketballTeamListner, val d
 
     override fun onBindViewHolder(holder: BasketballAdapter.BasketballTeamViewHolder , position: Int) {
         val team = getItem(position)
-        holder.bind(team, basketballTeamListner, deleteBasketballTeamListner)
+        holder.bind(team, basketballTeamListner, updateBasketballGameListener)
     }
 }
 
@@ -49,6 +55,6 @@ class BasketballTeamListner(val clickListner: (basketballGameId: String) -> Unit
     fun onClick(basketballGame: BasketballGame) = clickListner(basketballGame.id)
 }
 
-class DeleteBasketballTeamListner(val clickListner: (basketballGameId: String) -> Unit){
-    fun onDeleteClicked(basketballGame: BasketballGame) = clickListner(basketballGame.id);
+class UpdateBasketballGameListener(val clickListner: (basketballGame: BasketballGame) -> Unit){
+    fun onUpdateClicked(basketballGame: BasketballGame) = clickListner(basketballGame);
 }

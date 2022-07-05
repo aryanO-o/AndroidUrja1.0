@@ -17,6 +17,7 @@ import com.aryandadhich.urja10.ui.games.common.players.Player
 import com.aryandadhich.urja10.ui.games.common.players.PostPlayer
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballGame
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.PostBasketballGame
+import com.aryandadhich.urja10.ui.games.teamGames.basketball.PostBasketballScoreUpdates
 import com.aryandadhich.urja10.ui.games.teamGames.teams.PostTeam
 import com.aryandadhich.urja10.ui.games.teamGames.teams.Team
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
@@ -207,7 +208,13 @@ interface ApiService {
     @POST("/games/basketball/add")
     fun addBasketballGame(@Body postBasketballGame: PostBasketballGame): Deferred<BasketballGame>
 
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/basketball/get/game-by-id/{eventId}")
+    fun getBasketballGameById(@Path("eventId") eventId: String): Deferred<BasketballGame>
 
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/basketball/set-winner/{eventId}")
+    fun updateBasketballGame(@Path("eventId") eventId: String, @Body postBasketballScoreUpdates: PostBasketballScoreUpdates): Deferred<BasketballGame>
 
 
 }

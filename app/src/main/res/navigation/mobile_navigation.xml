@@ -232,6 +232,9 @@
         <action
             android:id="@+id/action_basketballFragment_to_gameInfoFragment"
             app:destination="@id/gameInfoFragment" />
+        <action
+            android:id="@+id/action_basketballFragment_to_updateBasketballGameFragment"
+            app:destination="@id/updateBasketballGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/addBasketballGameFragment"
@@ -244,12 +247,29 @@
     <fragment
         android:id="@+id/gameInfoFragment"
         android:name="com.aryandadhich.urja10.ui.games.common.gameInfo.GameInfoFragment"
-        android:label="GameInfoFragment" >
+        android:label="Game Info">
         <action
             android:id="@+id/action_gameInfoFragment_to_basketballFragment"
             app:destination="@id/basketballFragment" />
         <argument
             android:name="eventId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateBasketballGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.basketball.UpdateBasketballGameFragment"
+        android:label="Update Basketball Game">
+        <action
+            android:id="@+id/action_updateBasketballGameFragment_to_basketballFragment"
+            app:destination="@id/basketballFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
             app:argType="string" />
     </fragment>
 </navigation>

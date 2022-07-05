@@ -19,6 +19,9 @@ class BasketballFragmentViewModel: ViewModel() {
     private var _status = MutableLiveData<String>()
     val status: LiveData<String>
     get() = _status;
+    private var _loadData = MutableLiveData<Boolean>()
+    val loadData: LiveData<Boolean>
+    get() = _loadData;
 
     private val viewModelJob = Job();
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main);
@@ -75,11 +78,15 @@ class BasketballFragmentViewModel: ViewModel() {
 
 
                 Log.i("BasketballFragmentViewModel", _basketballGames.value.toString());
-
+                _loadData.value = true;
             }catch (t: Throwable){
                 _status.value = t.toString();
                 Log.i("BasketballFragmentViewModel. yaha wali: ", t.toString());
             }
         }
+    }
+
+    fun doneLoadingData(){
+        _loadData.value = false;
     }
 }

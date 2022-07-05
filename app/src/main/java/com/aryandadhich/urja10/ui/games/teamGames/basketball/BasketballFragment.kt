@@ -1,13 +1,17 @@
 package com.aryandadhich.urja10.ui.games.teamGames.basketball
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.aryandadhich.urja10.R
 import com.aryandadhich.urja10.databinding.FragmentBasketballBinding
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 
@@ -28,8 +32,9 @@ class BasketballFragment : Fragment() {
 
         binding.basketballFragmentRecyclerView.adapter = BasketballAdapter(BasketballTeamListner {
             navigateToGameInfoFragment(it)
-        }, DeleteBasketballTeamListner {
-
+        }, UpdateBasketballGameListener {
+            game->
+            navigateToUpdateBasketballFragment(game)
         })
 
         if(role == "")
@@ -39,7 +44,20 @@ class BasketballFragment : Fragment() {
             navigateToAddBasketballGame()
         }
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         return binding.root
+    }
+
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
+    }
+
+    private fun navigateToUpdateBasketballFragment(game: BasketballGame) {
+        findNavController().navigate(BasketballFragmentDirections.actionBasketballFragmentToUpdateBasketballGameFragment(game.id, game.teamA, game.teamB))
     }
 
     private fun navigateToGameInfoFragment(eventId: String) {
