@@ -254,6 +254,9 @@
         <argument
             android:name="eventId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_gameInfoFragment_to_footballFragment"
+            app:destination="@id/footballFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateBasketballGameFragment"
@@ -262,6 +265,45 @@
         <action
             android:id="@+id/action_updateBasketballGameFragment_to_basketballFragment"
             app:destination="@id/basketballFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/footballFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.football.FootballFragment"
+        android:label="Football Games" >
+        <action
+            android:id="@+id/action_footballFragment_to_addFootballGameFragment"
+            app:destination="@id/addFootballGameFragment" />
+        <action
+            android:id="@+id/action_footballFragment_to_updateFootballGameFragment"
+            app:destination="@id/updateFootballGameFragment" />
+        <action
+            android:id="@+id/action_footballFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFootballGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.football.AddFootballGameFragment"
+        android:label="Add Football Game">
+        <action
+            android:id="@+id/action_addFootballGameFragment_to_footballFragment"
+            app:destination="@id/footballFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFootballGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.football.UpdateFootballGameFragment"
+        android:label="Update Football Game">
+        <action
+            android:id="@+id/action_updateFootballGameFragment_to_footballFragment"
+            app:destination="@id/footballFragment" />
         <argument
             android:name="eventId"
             app:argType="string" />

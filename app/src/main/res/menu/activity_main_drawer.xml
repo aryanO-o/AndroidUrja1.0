@@ -36,5 +36,9 @@
             android:id="@+id/basketballFragment"
             android:icon="@drawable/basketball_icon"
             android:title="Basketball"/>
+        <item
+            android:id="@+id/footballFragment"
+            android:icon="@drawable/football_icon"
+            android:title="Football"/>
     </group>
 </menu>

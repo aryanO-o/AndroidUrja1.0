@@ -61,6 +61,7 @@ class AddBasketballGameFragment : Fragment() {
             navigation ->
             if(navigation){
                 goBackToBasketballGamesFragment()
+                viewModel.doneNavigating()
             }
         })
 

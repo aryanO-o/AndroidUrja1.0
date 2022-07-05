@@ -71,22 +71,46 @@ class GameInfoFragment : Fragment() {
         viewModel.scorer = binding.fragGameInfoScorerCollegeIdEditText.text.toString()
         viewModel.venue  = binding.fragGameInfoVenueEditText.text.toString()
 
+        var correct = true;
+
         var dateAndTimeString = "";
         dateAndTimeString +=  binding.fragGameInfoYearEditText.text.toString()
+        if(binding.fragGameInfoYearEditText.text.toString().length == 1){
+            Toast.makeText(context, "year will be in form YYYY", Toast.LENGTH_SHORT).show()
+            correct = false
+        }
         dateAndTimeString += "-"
         dateAndTimeString += binding.fragGameInfoMonthEditText.text.toString()
+        if(binding.fragGameInfoMonthEditText.text.toString().length == 1){
+            Toast.makeText(context, "month will be in form 00 - 12", Toast.LENGTH_SHORT).show()
+            correct = false
+        }
         dateAndTimeString += "-"
         dateAndTimeString += binding.fragGameInfoDayEditText.text.toString()
+        if(binding.fragGameInfoDayEditText.text.toString().length == 1){
+            Toast.makeText(context, "day will be in form 00 - 31", Toast.LENGTH_SHORT).show()
+            correct = false
+        }
         dateAndTimeString += "T"
         dateAndTimeString += binding.fragGameInfoHourEditText.text.toString()
+        if(binding.fragGameInfoHourEditText.text.toString().length == 1){
+            Toast.makeText(context, "hour will be in form 00 - 23", Toast.LENGTH_SHORT).show()
+            correct = false
+        }
         dateAndTimeString += ":"
         dateAndTimeString += binding.fragGameInfoMinutesEditText.text.toString()
+        if(binding.fragGameInfoMinutesEditText.text.toString().length == 1){
+            Toast.makeText(context, "minutes will be in form 00 - 59", Toast.LENGTH_SHORT).show()
+            correct = false
+        }
         dateAndTimeString += ":00.000Z"
 
         viewModel.dateAndTime = dateAndTimeString;
 
-        viewModel.updateGameInfoDetails();
-        makeTextNonEditable()
+        if(correct) {
+            viewModel.updateGameInfoDetails();
+            makeTextNonEditable()
+        }
     }
 
     private fun updateEditTextViews() {

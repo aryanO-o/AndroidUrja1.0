@@ -41,8 +41,10 @@ class UpdateBasketballGameFragment : Fragment() {
             updateData()
         })
         viewModel.navigation.observe(viewLifecycleOwner, Observer {
-            if(it)
+            if(it) {
                 navigateToBasketballGamesFragment()
+                viewModel.doneNavigating()
+            }
         })
 
         binding.fragUpdateBasketballUpdateBtn.setOnClickListener {
