@@ -75,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:inputType="number"
                 android:text="@{@string/house_captain_edit_frag_int(viewModel.year)}"
                 android:textColor="@color/blue" />
 
@@ -125,6 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:inputType="number"
                 android:text="@{@string/house_captain_edit_frag_int(viewModel.whatsappCountryCode)}"
                 android:textColor="@color/blue" />
 
@@ -145,6 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:inputType="number"
                 android:text="@{viewModel.whatsappNumber}"
                 android:textColor="@color/blue" />
 
@@ -175,6 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:inputType="number"
                 android:text="@{@string/house_captain_edit_frag_int(viewModel.mobileNumberCountryCode)}"
                 android:textColor="@color/blue" />
 
@@ -195,6 +199,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:inputType="number"
                 android:text="@{viewModel.mobileNumber}"
                 android:textColor="@color/blue" />
 
