@@ -260,6 +260,9 @@
         <action
             android:id="@+id/action_gameInfoFragment_to_badmintonFragment"
             app:destination="@id/badmintonFragment" />
+        <action
+            android:id="@+id/action_gameInfoFragment_to_tennisFragment"
+            app:destination="@id/tennisFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateBasketballGameFragment"
@@ -350,6 +353,44 @@
             app:argType="string" />
         <argument
             android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tennisFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisFragment"
+        android:label="TennisFragment" >
+        <action
+            android:id="@+id/action_tennisFragment_to_addTennisGameFragment"
+            app:destination="@id/addTennisGameFragment" />
+        <action
+            android:id="@+id/action_tennisFragment_to_updateTennisGameFragment"
+            app:destination="@id/updateTennisGameFragment" />
+        <action
+            android:id="@+id/action_tennisFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTennisGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.tennis.AddTennisGameFragment"
+        android:label="Add Tennis Game">
+        <action
+            android:id="@+id/action_addTennisGameFragment_to_tennisFragment"
+            app:destination="@id/tennisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTennisGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.tennis.UpdateTennisGameFragment"
+        android:label="Update Tennis Game">
+        <action
+            android:id="@+id/action_updateTennisGameFragment_to_tennisFragment"
+            app:destination="@id/tennisFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument android:name="teamA"
             app:argType="string" />
         <argument
             android:name="teamB"

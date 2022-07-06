@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tennis"
+            type="com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisGame" />
+
+        <variable
+            name="tennisTeamListener"
+            type="com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisTeamListener" />
+
+        <variable
+            name="updateTennisListener"
+            type="com.aryandadhich.urja10.ui.games.teamGames.tennis.UpdateTennisGameListener" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:onClick="@{()->tennisTeamListener.onClick(tennis)}"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/tennis_icon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/tennis_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/team_a_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@{tennis.teamA}"
+            android:fontFamily="@font/courgette"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/team_a_score"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tennis_icon"
+            tools:text="white house tennis team" />
+
+        <TextView
+            android:id="@+id/team_a_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/bungee_shade"
+            android:textColor="@color/blue"
+            android:text="@{@string/formmated_int(tennis.teamAScore)}"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/team_a_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/team_a_name"
+            app:layout_constraintTop_toTopOf="@id/team_a_name"
+            tools:text="24" />
+
+        <TextView
+            android:id="@+id/team_b_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/courgette"
+            android:textColor="@color/blue"
+            android:text="@{tennis.teamB}"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/team_b_score"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_a_name"
+            tools:text="white house tennis team" />
+
+        <TextView
+            android:id="@+id/team_b_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee_shade"
+            android:textColor="@color/blue"
+            android:text="@{@string/formmated_int(tennis.teamBScore)}"
+            android:textSize="20sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/team_b_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/team_b_name"
+            app:layout_constraintTop_toTopOf="@id/team_b_name"
+            tools:text="24" />
+
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="16dp"
+            android:onClick="@{()-> updateTennisListener.onUpdateClicked(tennis)}"
+            android:text="update"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

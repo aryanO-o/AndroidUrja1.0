@@ -20,6 +20,8 @@ import com.aryandadhich.urja10.ui.games.teamGames.football.FootballAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.football.FootballGame
 import com.aryandadhich.urja10.ui.games.teamGames.teams.Team
 import com.aryandadhich.urja10.ui.games.teamGames.teams.TeamAdapter
+import com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisAdapter
+import com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisGame
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainAdapter
 
@@ -85,5 +87,11 @@ fun bindRecyclerViewOfFootballGames(recyclerView: RecyclerView, data: List<Footb
 @BindingAdapter("badmintonListData")
 fun bindRecyclerViewOfBadmintonGames(recyclerView: RecyclerView, data: List<BadmintonGame>?){
     val adapter = recyclerView.adapter as BadmintonAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("tennisListData")
+fun bindRecyclerViewOfTennisGames(recyclerView: RecyclerView, data: List<TennisGame>?){
+    val adapter = recyclerView.adapter as TennisAdapter
     adapter.submitList(data)
 }
