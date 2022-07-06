@@ -257,6 +257,9 @@
         <action
             android:id="@+id/action_gameInfoFragment_to_footballFragment"
             app:destination="@id/footballFragment" />
+        <action
+            android:id="@+id/action_gameInfoFragment_to_badmintonFragment"
+            app:destination="@id/badmintonFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateBasketballGameFragment"
@@ -306,6 +309,44 @@
             app:destination="@id/footballFragment" />
         <argument
             android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/badmintonFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonFragment"
+        android:label="Badminton Games" >
+        <action
+            android:id="@+id/action_badmintonFragment_to_addBadmintonGameFragment"
+            app:destination="@id/addBadmintonGameFragment" />
+        <action
+            android:id="@+id/action_badmintonFragment_to_updateBadmintonGameFragment"
+            app:destination="@id/updateBadmintonGameFragment" />
+        <action
+            android:id="@+id/action_badmintonFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBadmintonGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.badminton.AddBadmintonGameFragment"
+        android:label="Add Badminton Game">
+        <action
+            android:id="@+id/action_addBadmintonGameFragment_to_badmintonFragment"
+            app:destination="@id/badmintonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateBadmintonGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.badminton.UpdateBadmintonGameFragment"
+        android:label="Update Badminton Game">
+        <action
+            android:id="@+id/action_updateBadmintonGameFragment_to_badmintonFragment"
+            app:destination="@id/badmintonFragment" />
+        <argument android:name="eventId"
             app:argType="string" />
         <argument
             android:name="teamA"

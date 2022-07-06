@@ -1,18 +1,17 @@
-package com.aryandadhich.urja10.ui.games.teamGames.basketball
+package com.aryandadhich.urja10.ui.games.teamGames.badminton
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aryandadhich.urja10.network.API
-import com.aryandadhich.urja10.ui.games.teamGames.teams.Team
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
-class UpdateBasketballGameViewModel(eventId: String, teamAName: String, teamBName: String): ViewModel() {
+class UpdateBadmintonGameViewModel(eventId: String, teamAName: String, teamBName: String): ViewModel() {
 
     private val _eventId: String
 
@@ -22,8 +21,8 @@ class UpdateBasketballGameViewModel(eventId: String, teamAName: String, teamBNam
     var _teamAName = teamAName;
     var _teamBName = teamBName;
 
-    private var _game = MutableLiveData<BasketballGame>()
-    val game: LiveData<BasketballGame>
+    private var _game = MutableLiveData<BadmintonGame>()
+    val game: LiveData<BadmintonGame>
         get() = _game
 
     private var _navigation = MutableLiveData<Boolean>()
@@ -38,35 +37,35 @@ class UpdateBasketballGameViewModel(eventId: String, teamAName: String, teamBNam
     private var coroutineScope = CoroutineScope(job + Dispatchers.Main);
     init {
         _eventId = eventId
-        getBasketballGame()
+        getBadmintonGame()
     }
 
-    private fun getBasketballGame() {
+    private fun getBadmintonGame() {
         coroutineScope.launch {
-            val getBasketballGameByIdDeferred = API.retrofitService.getBasketballGameById(_eventId);
+            val getBadmintonGameByIdDeferred = API.retrofitService.getBadmintonGameById(_eventId);
             try {
-                val result = getBasketballGameByIdDeferred.await()
+                val result = getBadmintonGameByIdDeferred.await()
                 _game.value = result;
                 _message.value = "fetch Successful"
             }
             catch (t: Throwable){
                 _message.value = "error loading game data: " + t.toString();
-                Log.i("UpdateBasketballGameViewModel", _message.value.toString())
+                Log.i("UpdateBadmintonGameViewModel", _message.value.toString())
             }
         }
     }
 
-    fun updateBasketballGameScores(){
+    fun updateBadmintonGameScores(){
         coroutineScope.launch {
-            val postBasketballUpdateDeferred = API.retrofitService.updateBasketballGame(_eventId, PostBasketballScoreUpdates(editTextTeamAScore, editTextTeamBScore))
+            val postBadmintonUpdateDeferred = API.retrofitService.updateBadmintonGame(_eventId, PostBadmintonScoreUpdates(editTextTeamAScore, editTextTeamBScore))
             try {
-                val result = postBasketballUpdateDeferred.await()
+                val result = postBadmintonUpdateDeferred.await()
                 _game.value = result;
                 _message.value = "update successful"
                 _navigation.value = true;
             }catch (t: Throwable){
                 _message.value = "error updating game data: " + t.toString();
-                Log.i("UpdateBasketballGameViewModel", _message.value.toString())
+                Log.i("UpdateBadmintonGameViewModel", _message.value.toString())
             }
         }
     }

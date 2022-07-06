@@ -45,8 +45,9 @@ class BasketballFragment : Fragment() {
         }
 
         viewModel.loadData.observe(viewLifecycleOwner, Observer {
-            if(it)
+            if(it) {
                 removeLoadingScreen()
+            }
         })
 
         return binding.root

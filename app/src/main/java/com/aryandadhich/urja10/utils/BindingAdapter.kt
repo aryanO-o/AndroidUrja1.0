@@ -12,6 +12,8 @@ import com.aryandadhich.urja10.ui.forms.Form
 import com.aryandadhich.urja10.ui.forms.GetFilledFormAdapter
 import com.aryandadhich.urja10.ui.games.common.players.Player
 import com.aryandadhich.urja10.ui.games.common.players.PlayerListAdapter
+import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonAdapter
+import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonGame
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballGame
 import com.aryandadhich.urja10.ui.games.teamGames.football.FootballAdapter
@@ -76,5 +78,12 @@ fun bindRecyclerViewOfBasketballGames(recyclerView: RecyclerView, data: List<Bas
 @BindingAdapter("footballListData")
 fun bindRecyclerViewOfFootballGames(recyclerView: RecyclerView, data: List<FootballGame>?){
     val adapter = recyclerView.adapter as FootballAdapter
+    adapter.submitList(data)
+}
+
+
+@BindingAdapter("badmintonListData")
+fun bindRecyclerViewOfBadmintonGames(recyclerView: RecyclerView, data: List<BadmintonGame>?){
+    val adapter = recyclerView.adapter as BadmintonAdapter
     adapter.submitList(data)
 }
