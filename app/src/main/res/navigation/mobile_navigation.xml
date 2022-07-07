@@ -423,4 +423,43 @@
             android:name="teamB"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/squashFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.squash.SquashFragment"
+        android:label="Squash Games">
+        <action
+            android:id="@+id/action_squashFragment_to_addSquashGameFragment"
+            app:destination="@id/addSquashGameFragment" />
+        <action
+            android:id="@+id/action_squashFragment_to_updateSquashGameFragment"
+            app:destination="@id/updateSquashGameFragment" />
+        <action
+            android:id="@+id/action_squashFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSquashGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.squash.AddSquashGameFragment"
+        android:label="Add Squash Game">
+        <action
+            android:id="@+id/action_addSquashGameFragment_to_squashFragment"
+            app:destination="@id/squashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSquashGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.squash.UpdateSquashGameFragment"
+        android:label="Update Squash Game">
+        <action
+            android:id="@+id/action_updateSquashGameFragment_to_squashFragment"
+            app:destination="@id/squashFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
 </navigation>

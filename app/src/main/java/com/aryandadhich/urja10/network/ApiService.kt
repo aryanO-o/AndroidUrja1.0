@@ -24,6 +24,9 @@ import com.aryandadhich.urja10.ui.games.teamGames.basketball.PostBasketballScore
 import com.aryandadhich.urja10.ui.games.teamGames.football.FootballGame
 import com.aryandadhich.urja10.ui.games.teamGames.football.PostFootballGame
 import com.aryandadhich.urja10.ui.games.teamGames.football.PostFootballScoreUpdates
+import com.aryandadhich.urja10.ui.games.teamGames.squash.PostSquashGame
+import com.aryandadhich.urja10.ui.games.teamGames.squash.PostSquashScoreUpdates
+import com.aryandadhich.urja10.ui.games.teamGames.squash.SquashGame
 import com.aryandadhich.urja10.ui.games.teamGames.tableTennis.PostTableTennisGame
 import com.aryandadhich.urja10.ui.games.teamGames.tableTennis.PostTableTennisScoreUpdates
 import com.aryandadhich.urja10.ui.games.teamGames.tableTennis.TableTennisGame
@@ -298,6 +301,23 @@ interface ApiService {
     @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY29vcmRpbmF0b3IiLCJsb2dpbl9pZCI6ImNvb3JkaW5hdG9yLTEtMjAyMiIsImNvbGxlZ2VfaWQiOiJiY3NfMjAyMDAxNEBpaWl0bS5hYy5pbiIsImlhdCI6MTY1NDQ3NzMxM30.p9D_YRwMS-d9jVsYVu6G2Ez4k8FMn5hwYYlOe_mnTNE")
     @PUT("/games/table-tennis/set-winner/{eventId}")
     fun updateTableTennisGame(@Path("eventId") eventId: String, @Body postTableTennisScoreUpdates: PostTableTennisScoreUpdates): Deferred<TableTennisGame>
+
+    // squash game functions
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/squash/get/all")
+    fun getAllSquashGames(): Deferred<List<SquashGame>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/squash/add")
+    fun addSquashGame(@Body postSquashGame: PostSquashGame): Deferred<SquashGame>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/squash/get/game-by-id/{eventId}")
+    fun getSquashGameById(@Path("eventId") eventId: String): Deferred<SquashGame>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY29vcmRpbmF0b3IiLCJsb2dpbl9pZCI6ImNvb3JkaW5hdG9yLTEtMjAyMiIsImNvbGxlZ2VfaWQiOiJiY3NfMjAyMDAxNEBpaWl0bS5hYy5pbiIsImlhdCI6MTY1NDQ3NzMxM30.p9D_YRwMS-d9jVsYVu6G2Ez4k8FMn5hwYYlOe_mnTNE")
+    @PUT("/games/squash/set-winner/{eventId}")
+    fun updateSquashGame(@Path("eventId") eventId: String, @Body postSquashScoreUpdates: PostSquashScoreUpdates): Deferred<SquashGame>
 
 }
 
