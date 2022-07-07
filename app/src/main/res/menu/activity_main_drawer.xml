@@ -48,5 +48,9 @@
             android:id="@+id/tennisFragment"
             android:icon="@drawable/tennis_icon"
             android:title="Tennis"/>
+        <item
+            android:id="@+id/tableTennisFragment"
+            android:icon="@drawable/table_tennis_icon"
+            android:title="Table Tennis"/>
     </group>
 </menu>

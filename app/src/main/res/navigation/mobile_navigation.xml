@@ -248,21 +248,9 @@
         android:id="@+id/gameInfoFragment"
         android:name="com.aryandadhich.urja10.ui.games.common.gameInfo.GameInfoFragment"
         android:label="Game Info">
-        <action
-            android:id="@+id/action_gameInfoFragment_to_basketballFragment"
-            app:destination="@id/basketballFragment" />
         <argument
             android:name="eventId"
             app:argType="string" />
-        <action
-            android:id="@+id/action_gameInfoFragment_to_footballFragment"
-            app:destination="@id/footballFragment" />
-        <action
-            android:id="@+id/action_gameInfoFragment_to_badmintonFragment"
-            app:destination="@id/badmintonFragment" />
-        <action
-            android:id="@+id/action_gameInfoFragment_to_tennisFragment"
-            app:destination="@id/tennisFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateBasketballGameFragment"
@@ -391,6 +379,45 @@
             android:name="eventId"
             app:argType="string" />
         <argument android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tableTennisFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.tableTennis.TableTennisFragment"
+        android:label="Table Tennis Games">
+        <action
+            android:id="@+id/action_tableTennisFragment_to_addTableTennisGameFragment"
+            app:destination="@id/addTableTennisGameFragment" />
+        <action
+            android:id="@+id/action_tableTennisFragment_to_updateTableTennisGameFragment"
+            app:destination="@id/updateTableTennisGameFragment" />
+        <action
+            android:id="@+id/action_tableTennisFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTableTennisGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.tableTennis.AddTableTennisGameFragment"
+        android:label="Add Table Tennis Game">
+        <action
+            android:id="@+id/action_addTableTennisGameFragment_to_tableTennisFragment"
+            app:destination="@id/tableTennisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTableTennisGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.tableTennis.UpdateTableTennisGameFragment"
+        android:label="Update Table Tennis Game">
+        <action
+            android:id="@+id/action_updateTableTennisGameFragment_to_tableTennisFragment"
+            app:destination="@id/tableTennisFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
             app:argType="string" />
         <argument
             android:name="teamB"
