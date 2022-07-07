@@ -462,4 +462,43 @@
             android:name="teamB"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/snookerFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.snooker.SnookerFragment"
+        android:label="SnookerFragment" >
+        <action
+            android:id="@+id/action_snookerFragment_to_addSnookerGameFragment"
+            app:destination="@id/addSnookerGameFragment" />
+        <action
+            android:id="@+id/action_snookerFragment_to_updateSnookerGameFragment"
+            app:destination="@id/updateSnookerGameFragment" />
+        <action
+            android:id="@+id/action_snookerFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSnookerGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.snooker.AddSnookerGameFragment"
+        android:label="AddSnookerGameFragment" >
+        <action
+            android:id="@+id/action_addSnookerGameFragment_to_snookerFragment"
+            app:destination="@id/snookerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSnookerGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.snooker.UpdateSnookerGameFragment"
+        android:label="Update Snooker Game">
+        <action
+            android:id="@+id/action_updateSnookerGameFragment_to_snookerFragment"
+            app:destination="@id/snookerFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
 </navigation>
