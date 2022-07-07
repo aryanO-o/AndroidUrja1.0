@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.aryandadhich.urja10.ui.games.teamGames.volleyball.UpdateVolleyballGameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.games.teamGames.volleyball.UpdateVolleyballGameFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/frag_update_volleyball_volleyball_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/volleyball_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/frag_update_volleyball_volleyball_icon"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:text="@{viewModel._teamAName}"
+            tools:text="teamA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/frag_update_volleyball_team_a_text"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frag_update_volleyball_team_a_score_input_layout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Update Score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_update_volleyball_team_a_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag_update_volleyball_team_a_score_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:background="@color/white"
+                android:text="@{@string/formmated_int(viewModel.game.teamAScore)}"
+                android:textColor="@color/blue" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/frag_update_volleyball_team_a_score_input_layout"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:text="@{viewModel._teamBName}"
+            tools:text="teamB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/frag_update_volleyball_team_b_text"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frag_update_volleyball_team_b_score_input_layout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Update Score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_update_volleyball_team_b_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag_update_volleyball_team_b_score_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="number"
+                android:text="@{@string/formmated_int(viewModel.game.teamBScore)}"
+                android:textColor="@color/blue" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/frag_update_volleyball_team_b_score_input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="32dp"
+            android:text="update"
+            android:id="@+id/frag_update_volleyball_update_btn"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

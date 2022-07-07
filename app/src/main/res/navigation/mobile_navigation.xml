@@ -501,4 +501,43 @@
             android:name="teamB"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/volleyballFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.volleyball.VolleyballFragment"
+        android:label="Volleyball Game">
+        <action
+            android:id="@+id/action_volleyballFragment_to_addVolleyballGameFragment"
+            app:destination="@id/addVolleyballGameFragment" />
+        <action
+            android:id="@+id/action_volleyballFragment_to_updateVolleyballGameFragment"
+            app:destination="@id/updateVolleyballGameFragment" />
+        <action
+            android:id="@+id/action_volleyballFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVolleyballGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.volleyball.AddVolleyballGameFragment"
+        android:label="Add Volleyball Game">
+        <action
+            android:id="@+id/action_addVolleyballGameFragment_to_volleyballFragment"
+            app:destination="@id/volleyballFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateVolleyballGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.teamGames.volleyball.UpdateVolleyballGameFragment"
+        android:label="Update Volleyball Game">
+        <action
+            android:id="@+id/action_updateVolleyballGameFragment_to_volleyballFragment"
+            app:destination="@id/volleyballFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="teamA"
+            app:argType="string" />
+        <argument
+            android:name="teamB"
+            app:argType="string" />
+    </fragment>
 </navigation>
