@@ -64,5 +64,9 @@
             android:id="@+id/volleyballFragment"
             android:icon="@drawable/volleyball_icon"
             android:title="Volleyball"/>
+        <item
+            android:id="@+id/cricketFragment"
+            android:icon="@drawable/cricket_icon"
+            android:title="Cricket"/>
     </group>
 </menu>

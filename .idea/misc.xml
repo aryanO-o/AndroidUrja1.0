@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/drawable/badminton_icon.xml" value="0.16" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/drawable/basketball_icon.xml" value="0.16" />
+        <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/drawable/cricket_icon.xml" value="0.16" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/drawable/football_icon.xml" value="0.16" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/drawable/table_tennis_icon.xml" value="0.16" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/drawable/tennis_icon.xml" value="0.16" />
@@ -13,10 +14,12 @@
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/badminton_list_item.xml" value="0.2" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/basketball_list_item.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/coordinator_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/cricket_list_item.xml" value="0.253125" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/football_list_item.xml" value="0.253125" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_badminton_game.xml" value="0.25025641025641027" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_basketball_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_coordinator.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_cricket_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_event_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_football_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_add_form.xml" value="0.25416666666666665" />
@@ -32,6 +35,7 @@
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_badminton.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_basketball.xml" value="0.11302083333333333" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_coordinator_edit.xml" value="0.25416666666666665" />
+        <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_cricket.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_event_coordinator.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_event_coordinator_edit.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_fill_form.xml" value="0.25416666666666665" />
@@ -52,6 +56,7 @@
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_tennis.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_update_badminton_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_update_basketball_game.xml" value="0.25025641025641027" />
+        <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_update_cricket_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_update_football_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_update_snooker_game.xml" value="0.25416666666666665" />
         <entry key="..\:/android dev/AndroidUrja1.0/app/src/main/res/layout/fragment_update_snooker_game2.xml" value="0.25416666666666665" />

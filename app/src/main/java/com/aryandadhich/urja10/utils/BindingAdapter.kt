@@ -16,6 +16,8 @@ import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonGame
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.basketball.BasketballGame
+import com.aryandadhich.urja10.ui.games.teamGames.cricket.CricketAdapter
+import com.aryandadhich.urja10.ui.games.teamGames.cricket.CricketGame
 import com.aryandadhich.urja10.ui.games.teamGames.football.FootballAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.football.FootballGame
 import com.aryandadhich.urja10.ui.games.teamGames.snooker.SnookerAdapter
@@ -125,5 +127,10 @@ fun bindRecyclerViewOfSnookerGames(recyclerView: RecyclerView, data: List<Snooke
 @BindingAdapter("volleyballListData")
 fun bindRecyclerViewOfVolleyballGames(recyclerView: RecyclerView, data: List<VolleyballGame>?){
     val adapter = recyclerView.adapter as VolleyballAdapter
+    adapter.submitList(data)
+}
+@BindingAdapter("cricketListData")
+fun bindRecyclerViewOfCricketGames(recyclerView: RecyclerView, data: List<CricketGame>?){
+    val adapter = recyclerView.adapter as CricketAdapter
     adapter.submitList(data)
 }
