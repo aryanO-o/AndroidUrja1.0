@@ -15,6 +15,8 @@ import com.aryandadhich.urja10.ui.games.common.gameInfo.GetGameInfoOtherDetails
 import com.aryandadhich.urja10.ui.games.common.gameInfo.PostGameInfo
 import com.aryandadhich.urja10.ui.games.common.players.Player
 import com.aryandadhich.urja10.ui.games.common.players.PostPlayer
+import com.aryandadhich.urja10.ui.games.individualGames.chess.ChessGame
+import com.aryandadhich.urja10.ui.games.individualGames.chess.PostChessGame
 import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonGame
 import com.aryandadhich.urja10.ui.games.teamGames.badminton.PostBadmintonGame
 import com.aryandadhich.urja10.ui.games.teamGames.badminton.PostBadmintonScoreUpdates
@@ -378,6 +380,23 @@ interface ApiService {
     @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY29vcmRpbmF0b3IiLCJsb2dpbl9pZCI6ImNvb3JkaW5hdG9yLTEtMjAyMiIsImNvbGxlZ2VfaWQiOiJiY3NfMjAyMDAxNEBpaWl0bS5hYy5pbiIsImlhdCI6MTY1NDQ3NzMxM30.p9D_YRwMS-d9jVsYVu6G2Ez4k8FMn5hwYYlOe_mnTNE")
     @POST("/games/cricket/set-winner/{eventId}")
     fun updateCricketGame(@Path("eventId") eventId: String, @Body postCricketScoreUpdates: PostCricketScoreUpdates): Deferred<CricketGame>
+
+    // chess game functions
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/chess/get/all")
+    fun getAllChessGames(): Deferred<List<ChessGame>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/chess/add")
+    fun addChessGame(@Body postChessGame: PostChessGame): Deferred<ChessGame>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/chess/get/game-by-id/{eventId}")
+    fun getChessGameById(@Path("eventId") eventId: String): Deferred<ChessGame>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY29vcmRpbmF0b3IiLCJsb2dpbl9pZCI6ImNvb3JkaW5hdG9yLTEtMjAyMiIsImNvbGxlZ2VfaWQiOiJiY3NfMjAyMDAxNEBpaWl0bS5hYy5pbiIsImlhdCI6MTY1NDQ3NzMxM30.p9D_YRwMS-d9jVsYVu6G2Ez4k8FMn5hwYYlOe_mnTNE")
+    @POST("/games/chess/update/{eventId}")
+    fun updateChessGame(@Path("eventId") eventId: String, @Body postChessGame: PostChessGame): Deferred<ChessGame>
 
 }
 

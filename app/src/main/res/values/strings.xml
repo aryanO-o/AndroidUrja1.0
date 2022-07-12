@@ -27,4 +27,7 @@
     <string name="form_to_select">To Select: %s</string>
     <string name="formmated_jersey_no">%d</string>
     <string name="formmated_int">%d</string>
+    <string name="formmated_winner">Winner: %s</string>
+    <string name="formmated_vs">%s Vs. %s</string>
+
 </resources>

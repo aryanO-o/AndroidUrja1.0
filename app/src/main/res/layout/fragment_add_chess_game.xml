@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.aryandadhich.urja10.ui.games.individualGames.chess.AddChessGameFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.games.individualGames.chess.AddChessGameFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/chess_add_game_chess_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/chess_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frag_add_chess_enter_player_a_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Enter Player A"
+            app:layout_constraintTop_toBottomOf="@id/chess_add_game_chess_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag_add_chess_enter_player_a_edit_text"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frag_add_chess_enter_player_b_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Enter Player A"
+            app:layout_constraintTop_toBottomOf="@id/frag_add_chess_enter_player_a_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag_add_chess_enter_player_b_edit_text"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frag_add_chess_enter_winner_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Winner"
+            app:layout_constraintTop_toBottomOf="@id/frag_add_chess_enter_player_b_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag_add_chess_enter_winner_edit_text"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:textColor="@color/blue"
+                android:text="-"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/chess_add_game_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chess_add_game_cancle_btn"
+            app:layout_constraintTop_toBottomOf="@id/frag_add_chess_enter_winner_input_layout" />
+
+        <Button
+            android:id="@+id/chess_add_game_cancle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cancle"
+            app:layout_constraintBottom_toBottomOf="@id/chess_add_game_add_btn"
+            app:layout_constraintEnd_toStartOf="@+id/chess_add_game_add_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/chess_add_game_add_btn"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

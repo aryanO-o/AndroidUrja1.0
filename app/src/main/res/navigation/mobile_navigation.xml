@@ -579,4 +579,37 @@
             android:name="teamB"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/chessFragment"
+        android:name="com.aryandadhich.urja10.ui.games.individualGames.chess.ChessFragment"
+        android:label="Chess Games">
+        <action
+            android:id="@+id/action_chessFragment_to_addChessGameFragment"
+            app:destination="@id/addChessGameFragment" />
+        <action
+            android:id="@+id/action_chessFragment_to_updateChessGameFragment"
+            app:destination="@id/updateChessGameFragment" />
+        <action
+            android:id="@+id/action_chessFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addChessGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.individualGames.chess.AddChessGameFragment"
+        android:label="Add Chess Game">
+        <action
+            android:id="@+id/action_addChessGameFragment_to_chessFragment"
+            app:destination="@id/chessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateChessGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.individualGames.chess.UpdateChessGameFragment"
+        android:label="Update Chess Game">
+        <action
+            android:id="@+id/action_updateChessGameFragment_to_chessFragment"
+            app:destination="@id/chessFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
 </navigation>
