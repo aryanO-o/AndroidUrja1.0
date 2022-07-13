@@ -12,6 +12,8 @@ import com.aryandadhich.urja10.ui.forms.Form
 import com.aryandadhich.urja10.ui.forms.GetFilledFormAdapter
 import com.aryandadhich.urja10.ui.games.common.players.Player
 import com.aryandadhich.urja10.ui.games.common.players.PlayerListAdapter
+import com.aryandadhich.urja10.ui.games.individualGames.carrom.CarromAdapter
+import com.aryandadhich.urja10.ui.games.individualGames.carrom.CarromGame
 import com.aryandadhich.urja10.ui.games.individualGames.chess.ChessAdapter
 import com.aryandadhich.urja10.ui.games.individualGames.chess.ChessGame
 import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonAdapter
@@ -139,5 +141,11 @@ fun bindRecyclerViewOfCricketGames(recyclerView: RecyclerView, data: List<Cricke
 @BindingAdapter("chessListData")
 fun bindRecyclerViewOfChessGames(recyclerView: RecyclerView, data: List<ChessGame>?){
     val adapter = recyclerView.adapter as ChessAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("carromListData")
+fun bindRecyclerViewOfCarromGames(recyclerView: RecyclerView, data: List<CarromGame>?){
+    val adapter = recyclerView.adapter as CarromAdapter
     adapter.submitList(data)
 }

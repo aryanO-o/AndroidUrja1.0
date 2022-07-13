@@ -15,6 +15,8 @@ import com.aryandadhich.urja10.ui.games.common.gameInfo.GetGameInfoOtherDetails
 import com.aryandadhich.urja10.ui.games.common.gameInfo.PostGameInfo
 import com.aryandadhich.urja10.ui.games.common.players.Player
 import com.aryandadhich.urja10.ui.games.common.players.PostPlayer
+import com.aryandadhich.urja10.ui.games.individualGames.carrom.CarromGame
+import com.aryandadhich.urja10.ui.games.individualGames.carrom.PostCarromGame
 import com.aryandadhich.urja10.ui.games.individualGames.chess.ChessGame
 import com.aryandadhich.urja10.ui.games.individualGames.chess.PostChessGame
 import com.aryandadhich.urja10.ui.games.teamGames.badminton.BadmintonGame
@@ -397,6 +399,23 @@ interface ApiService {
     @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY29vcmRpbmF0b3IiLCJsb2dpbl9pZCI6ImNvb3JkaW5hdG9yLTEtMjAyMiIsImNvbGxlZ2VfaWQiOiJiY3NfMjAyMDAxNEBpaWl0bS5hYy5pbiIsImlhdCI6MTY1NDQ3NzMxM30.p9D_YRwMS-d9jVsYVu6G2Ez4k8FMn5hwYYlOe_mnTNE")
     @POST("/games/chess/update/{eventId}")
     fun updateChessGame(@Path("eventId") eventId: String, @Body postChessGame: PostChessGame): Deferred<ChessGame>
+
+    // carrom game functions
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/carrom/get/all")
+    fun getAllCarromGames(): Deferred<List<CarromGame>>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @POST("/games/carrom/add")
+    fun addCarromGame(@Body postCarromGame: PostCarromGame): Deferred<CarromGame>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsImxvZ2luX2lkIjoic3VwZXJ2aXNvci0yMDIyIiwiY29sbGVnZV9pZCI6InN1cGVydmlzb3JAaWlpdG0uYWMuaW4iLCJpYXQiOjE2NTQwMTM2MTZ9.WzM8L_7oNW-uaALkcK0anJBJM63q39vwWheE0HkhZuc")
+    @GET("/games/carrom/get/game-by-id/{eventId}")
+    fun getCarromGameById(@Path("eventId") eventId: String): Deferred<CarromGame>
+
+    @Headers("Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY29vcmRpbmF0b3IiLCJsb2dpbl9pZCI6ImNvb3JkaW5hdG9yLTEtMjAyMiIsImNvbGxlZ2VfaWQiOiJiY3NfMjAyMDAxNEBpaWl0bS5hYy5pbiIsImlhdCI6MTY1NDQ3NzMxM30.p9D_YRwMS-d9jVsYVu6G2Ez4k8FMn5hwYYlOe_mnTNE")
+    @POST("/games/carrom/update/{eventId}")
+    fun updateCarromGame(@Path("eventId") eventId: String, @Body postCarromGame: PostCarromGame): Deferred<CarromGame>
 
 }
 

@@ -72,5 +72,9 @@
             android:id="@+id/chessFragment"
             android:icon="@drawable/chess_icon"
             android:title="Chess"/>
+        <item
+            android:id="@+id/carromFragment"
+            android:icon="@drawable/carrom_icon"
+            android:title="Carrom"/>
     </group>
 </menu>

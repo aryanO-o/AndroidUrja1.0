@@ -612,4 +612,37 @@
             android:name="eventId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/carromFragment"
+        android:name="com.aryandadhich.urja10.ui.games.individualGames.carrom.CarromFragment"
+        android:label="Carrom Games">
+        <action
+            android:id="@+id/action_carromFragment_to_addCarromGameFragment"
+            app:destination="@id/addCarromGameFragment" />
+        <action
+            android:id="@+id/action_carromFragment_to_updateCarromGameFragment"
+            app:destination="@id/updateCarromGameFragment" />
+        <action
+            android:id="@+id/action_carromFragment_to_gameInfoFragment"
+            app:destination="@id/gameInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCarromGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.individualGames.carrom.AddCarromGameFragment"
+        android:label="Add Carrom Games">
+        <action
+            android:id="@+id/action_addCarromGameFragment_to_carromFragment"
+            app:destination="@id/carromFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCarromGameFragment"
+        android:name="com.aryandadhich.urja10.ui.games.individualGames.carrom.UpdateCarromGameFragment"
+        android:label="Update Carrom Game">
+        <action
+            android:id="@+id/action_updateCarromGameFragment_to_carromFragment"
+            app:destination="@id/carromFragment" />
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
 </navigation>
