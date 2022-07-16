@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_nav_home_to_frag_sign_in"
             app:destination="@id/frag_sign_in" />
+        <action
+            android:id="@+id/action_nav_home_to_editNoticeFragment"
+            app:destination="@id/editNoticeFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_addNoticeFragment"
+            app:destination="@id/addNoticeFragment" />
     </fragment>
 
     <fragment
@@ -644,5 +650,24 @@
         <argument
             android:name="eventId"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNoticeFragment"
+        android:name="com.aryandadhich.urja10.ui.home.EditNoticeFragment"
+        android:label="Edit Notice">
+        <action
+            android:id="@+id/action_editNoticeFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <argument
+            android:name="noticeId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoticeFragment"
+        android:name="com.aryandadhich.urja10.ui.home.AddNoticeFragment"
+        android:label="Add Notice">
+        <action
+            android:id="@+id/action_addNoticeFragment_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

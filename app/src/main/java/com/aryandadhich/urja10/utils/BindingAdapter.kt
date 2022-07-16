@@ -36,6 +36,8 @@ import com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.tennis.TennisGame
 import com.aryandadhich.urja10.ui.games.teamGames.volleyball.VolleyballAdapter
 import com.aryandadhich.urja10.ui.games.teamGames.volleyball.VolleyballGame
+import com.aryandadhich.urja10.ui.home.Notice
+import com.aryandadhich.urja10.ui.home.NoticeAdapter
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptain
 import com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainAdapter
 
@@ -147,5 +149,11 @@ fun bindRecyclerViewOfChessGames(recyclerView: RecyclerView, data: List<ChessGam
 @BindingAdapter("carromListData")
 fun bindRecyclerViewOfCarromGames(recyclerView: RecyclerView, data: List<CarromGame>?){
     val adapter = recyclerView.adapter as CarromAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("noticeListData")
+fun bindRecyclerViewOfNotices(recyclerView: RecyclerView, data: List<Notice>?){
+    val adapter = recyclerView.adapter as NoticeAdapter
     adapter.submitList(data)
 }

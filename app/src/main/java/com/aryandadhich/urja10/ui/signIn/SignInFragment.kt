@@ -31,7 +31,6 @@ class SignInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        (activity as AppCompatActivity).supportActionBar?.hide()
         // Inflate the layout for this fragment
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         viewModel = ViewModelProviders.of(this).get(SignInViewModel::class.java)
@@ -41,7 +40,7 @@ class SignInFragment : Fragment() {
 
         viewModel.login.observe(viewLifecycleOwner, Observer { login->
             if(login){
-                navigateToHome();
+                navigateToHome()
                 showLoginToast();
             }
             else{

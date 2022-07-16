@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.databinding.FragmentHomeBinding
 import com.aryandadhich.urja10.utils.stringUtils
+import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 
 class HomeFragment : Fragment() {
 
@@ -22,34 +24,54 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var viewModel: HomeViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
+        viewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.viewModel = viewModel;
+        binding.setLifecycleOwner(this)
+
+        binding.noticeFragmentRecyclerView.adapter = NoticeAdapter(updateNoticeListener = UpdateNoticeListener{
+            noticeId->
+                findNavController().navigate(HomeFragmentDirections.actionNavHomeToEditNoticeFragment(noticeId));
+        })
+
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
+        binding.addNoticeFab.setOnClickListener{
+            navigateToAddNotice()
         }
 
-        if (context?.let { checkForInternet(it) } == true && stringUtils.isLoggedIn == false) {
-            findNavController().navigate(HomeFragmentDirections.actionNavHomeToFragSignIn())
-        } else if(context?.let { checkForInternet(it) } == false) {
-            findNavController().navigate(HomeFragmentDirections.actionNavHomeToNoInternetFragment())
+        if(role == ""){
+            binding.addNoticeFab.visibility = View.GONE
         }
 
-        return root
+        return binding.root
+    }
+
+    private fun navigateToAddNotice() {
+        findNavController().navigate(HomeFragmentDirections.actionNavHomeToAddNoticeFragment())
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
     }
 
     private fun checkForInternet(context: Context): Boolean {
