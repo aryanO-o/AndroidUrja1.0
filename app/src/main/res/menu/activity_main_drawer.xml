@@ -5,33 +5,29 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/menu_home" />
+        <item
             android:id="@+id/houseCaptainFragment"
             android:icon="@drawable/people_icon"
-            android:title="@string/house_captain" />
+            android:title="House-Caprain" />
         <item
             android:id="@+id/coordinatorFragment"
             android:icon="@drawable/people_icon"
-            android:title="@string/coordinator" />
+            android:title="Coordinator" />
         <item
             android:id="@+id/eventCoordinatorFragment"
             android:icon="@drawable/people_icon"
-            android:title="@string/event_coordinator" />
+            android:title="Event_Coordinator" />
         <item
             android:id="@+id/teamFragment"
             android:icon="@drawable/people_icon"
             android:title="Teams" />
         <item
             android:id="@+id/availableFormsFragment"
-            android:icon="@drawable/ic_baseline_form_icon"
+            android:icon="@drawable/form_icon"
             android:title="Forms" />
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/frag_sign_in"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Sign In" />
         <item
             android:id="@+id/basketballFragment"
             android:icon="@drawable/basketball_icon"
@@ -76,5 +72,9 @@
             android:id="@+id/carromFragment"
             android:icon="@drawable/carrom_icon"
             android:title="Carrom"/>
+        <item
+            android:id="@+id/frag_sign_in"
+            android:icon="@drawable/sign_in_icon"
+            android:title="Sign In" />
     </group>
 </menu>
