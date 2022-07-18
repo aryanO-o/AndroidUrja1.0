@@ -13,7 +13,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.MainActivity
+import com.aryandadhich.urja10.R
 import com.aryandadhich.urja10.databinding.FragmentSignInBinding
+import com.aryandadhich.urja10.utils.stringUtils
 import com.aryandadhich.urja10.utils.stringUtils.Companion.JWT
 import com.aryandadhich.urja10.utils.stringUtils.Companion.isLoggedIn
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
@@ -68,6 +70,8 @@ class SignInFragment : Fragment() {
 
     fun showLoginToast(){
         Toast.makeText(context, "${viewModel.loginMessage}", Toast.LENGTH_SHORT).show()
+        (activity as MainActivity).mEditor.putString(getString(R.string.role), stringUtils.role);
+        (activity as MainActivity).mEditor.commit();
     }
 
 

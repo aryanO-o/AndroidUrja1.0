@@ -1,11 +1,15 @@
 package com.aryandadhich.urja10.ui.signIn
 
+import android.content.ContentResolver
+import android.provider.Settings.Global.getString
 import android.text.BoringLayout
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.aryandadhich.urja10.MainActivity
+import com.aryandadhich.urja10.R
 import com.aryandadhich.urja10.network.API
 import com.aryandadhich.urja10.utils.stringUtils.Companion.JWT
 import com.aryandadhich.urja10.utils.stringUtils.Companion.isLoggedIn

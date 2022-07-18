@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.aryandadhich.urja10.R
 import com.aryandadhich.urja10.databinding.FragmentHomeBinding
 import com.aryandadhich.urja10.utils.stringUtils
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
@@ -54,7 +55,7 @@ class HomeFragment : Fragment() {
             navigateToAddNotice()
         }
 
-        if(role == ""){
+        if(stringUtils.role == ""){
             binding.addNoticeFab.visibility = View.GONE
         }
 

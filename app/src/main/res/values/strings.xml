@@ -29,5 +29,5 @@
     <string name="formmated_int">%d</string>
     <string name="formmated_winner">Winner: %s</string>
     <string name="formmated_vs">%s Vs. %s</string>
-
+    <string name="role">com.aryandadhich.urja10.role</string>
 </resources>
