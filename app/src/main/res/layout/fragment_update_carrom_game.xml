@@ -99,6 +99,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frag_add_carrom_enter_winner_input_layout" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="16dp"
+            android:src="@drawable/delete_icon"
+            android:backgroundTint="@color/bright_red"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

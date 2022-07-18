@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.aryandadhich.urja10.databinding.ChessListItemBinding
 import com.aryandadhich.urja10.databinding.GamePlayersListItemBinding
+import com.aryandadhich.urja10.ui.games.individualGames.chess.ChessAdapter
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
 
 class PlayerListAdapter(val deleteGamePlayerListner: DeleteGamePlayerListner): ListAdapter<Player, PlayerListAdapter.PlayerViewHolder>(DiffCallBack) {
@@ -36,7 +38,11 @@ class PlayerListAdapter(val deleteGamePlayerListner: DeleteGamePlayerListner): L
         parent: ViewGroup,
         viewType: Int
     ): PlayerListAdapter.PlayerViewHolder {
-        return PlayerViewHolder(GamePlayersListItemBinding.inflate(LayoutInflater.from(parent.context)));
+        return PlayerListAdapter.PlayerViewHolder (
+            GamePlayersListItemBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        );
     }
 
     override fun onBindViewHolder(holder: PlayerListAdapter.PlayerViewHolder, position: Int) {

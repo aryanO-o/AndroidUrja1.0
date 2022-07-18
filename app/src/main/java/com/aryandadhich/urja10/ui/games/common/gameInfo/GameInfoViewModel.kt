@@ -18,6 +18,7 @@ class GameInfoViewModel(eventId: String): ViewModel(){
     var scorer = ""
     var refree = ""
     var venue = ""
+    var inGameDetails = ""
     private var _eventId: String
     private lateinit var _gameId: String
 
@@ -83,6 +84,7 @@ class GameInfoViewModel(eventId: String): ViewModel(){
         scorer = result.scorer
         refree = result.referee
         venue = result.venue
+        inGameDetails = result.inGameDetails
     }
 
     private fun setGameNameAndTitle() {
@@ -92,7 +94,7 @@ class GameInfoViewModel(eventId: String): ViewModel(){
 
     fun updateGameInfoDetails(){
         coroutineScope.launch {
-            val updateGameInfoDeferred = API.retrofitService.updateGameDetails(_gameId, PostGameInfo(gameName, gameTitle, dateAndTime, scorer, refree, venue, _eventId))
+            val updateGameInfoDeferred = API.retrofitService.updateGameDetails(_gameId, PostGameInfo(gameName, gameTitle, dateAndTime, scorer, refree, venue, _eventId, inGameDetails))
             try {
                 val result = updateGameInfoDeferred.await()
                 _message.value = "update successful"

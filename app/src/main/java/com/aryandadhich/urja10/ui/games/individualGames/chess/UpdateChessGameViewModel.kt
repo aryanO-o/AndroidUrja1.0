@@ -68,6 +68,20 @@ class UpdateChessGameViewModel(eventId: String): ViewModel() {
         }
     }
 
+    fun deleteGame(){
+        coroutineScope.launch {
+            val deleteGameDeferred = API.retrofitService.deleteChessGame(_eventId)
+            try {
+                val result = deleteGameDeferred.await()
+                _message.value = "deleted successful"
+                _navigation.value = true;
+            }catch (t: Throwable){
+                _message.value = "error updating game data: " + t.toString();
+                Log.i("UpdateChessGameViewModel", _message.value.toString())
+            }
+        }
+    }
+
     fun doneNavigating(){
         _navigation.value = false;
     }

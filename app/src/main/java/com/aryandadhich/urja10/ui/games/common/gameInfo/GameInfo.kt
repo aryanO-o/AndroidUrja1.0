@@ -12,6 +12,7 @@ data class GameInfo(
     val referee: String,
     val venue: String,
     @Json(name = "event_id") val eventId: String,
+    val inGameDetails: String,
 )
 
 data class PostGameInfo(
@@ -22,6 +23,7 @@ data class PostGameInfo(
     val referee: String,
     val venue: String,
     @Json(name = "event_id") val eventId: String,
+    val inGameDetails: String,
 )
 
 data class GetGameInfo(
@@ -37,5 +39,6 @@ data class GetGameInfoOtherDetails(
     @Json(name = "date_and_time") val dateAndTime: String,
     val scorer: String,
     val referee: String,
-    val venue: String
+    val venue: String,
+    val inGameDetails:String,
 )

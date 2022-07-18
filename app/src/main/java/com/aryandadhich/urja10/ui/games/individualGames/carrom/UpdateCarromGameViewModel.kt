@@ -68,6 +68,20 @@ class UpdateCarromGameViewModel(eventId: String): ViewModel() {
         }
     }
 
+    fun deleteGame(){
+        coroutineScope.launch {
+            val deleteGameDeferred = API.retrofitService.deleteCarromGame(_eventId)
+            try {
+                val result = deleteGameDeferred.await()
+                _message.value = "deleted successful"
+                _navigation.value = true;
+            }catch (t: Throwable){
+                _message.value = "error updating game data: " + t.toString();
+                Log.i("UpdateCarromGameViewModel", _message.value.toString())
+            }
+        }
+    }
+
     fun doneNavigating(){
         _navigation.value = false;
     }

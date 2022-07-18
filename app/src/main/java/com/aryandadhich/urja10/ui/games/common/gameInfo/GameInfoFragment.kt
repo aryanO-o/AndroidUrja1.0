@@ -70,6 +70,7 @@ class GameInfoFragment : Fragment() {
         viewModel.refree = binding.fragGameInfoRefereeEditText.text.toString();
         viewModel.scorer = binding.fragGameInfoScorerCollegeIdEditText.text.toString()
         viewModel.venue  = binding.fragGameInfoVenueEditText.text.toString()
+        viewModel.inGameDetails = binding.fragGameInfoInGameDetialsEditText.text.toString()
 
         var correct = true;
 
@@ -116,6 +117,7 @@ class GameInfoFragment : Fragment() {
     private fun updateEditTextViews() {
         binding.fragGameInfoGameEditText.setText(viewModel.gameName)
         binding.fragGameInfoGameTitleEditText.setText(viewModel.gameTitle)
+        binding.fragGameInfoInGameDetialsEditText.setText(viewModel.inGameDetails)
         val date = viewModel.dateAndTime.split('-')
         val day = date[2][0].toString() + date[2][1];
         val month = date[1];
@@ -146,6 +148,7 @@ class GameInfoFragment : Fragment() {
         binding.fragGameInfoScorerCollegeIdEditText.isFocusableInTouchMode = true;
         binding.fragGameInfoRefereeEditText.isFocusableInTouchMode = true;
         binding.fragGameInfoVenueEditText.isFocusableInTouchMode = true;
+        binding.fragGameInfoInGameDetialsEditText.isFocusableInTouchMode = true;
 
     }
 
@@ -159,6 +162,7 @@ class GameInfoFragment : Fragment() {
         binding.fragGameInfoScorerCollegeIdEditText.isFocusableInTouchMode = false;
         binding.fragGameInfoRefereeEditText.isFocusableInTouchMode = false;
         binding.fragGameInfoVenueEditText.isFocusableInTouchMode = false;
+        binding.fragGameInfoInGameDetialsEditText.isFocusableInTouchMode =false;
 
     }
 

@@ -251,11 +251,31 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frag_game_info_in_game_details_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="InGameDetails"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_hour_input_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frag_game_info_in_game_detials_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/blue"
+                    android:focusable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/frag_game_info_edit_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/frag_game_info_hour_input_layout"
+                app:layout_constraintTop_toBottomOf="@id/frag_game_info_in_game_details_input_layout"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"

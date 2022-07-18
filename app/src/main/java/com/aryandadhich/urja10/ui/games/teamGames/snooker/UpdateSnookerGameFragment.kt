@@ -1,5 +1,6 @@
 package com.aryandadhich.urja10.ui.games.teamGames.snooker
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -48,7 +49,33 @@ class UpdateSnookerGameFragment : Fragment() {
         binding.fragUpdateSnookerUpdateBtn.setOnClickListener {
             onUpdateBtnClicked()
         }
+
+        binding.deleteGame.setOnClickListener{
+            onDeleteBtnClicked()
+        }
+
         return binding.root
+    }
+
+    private fun onDeleteBtnClicked() {
+        val builder: AlertDialog.Builder? = activity?.let {
+            AlertDialog.Builder(it)
+        }
+
+        builder!!.setMessage("Are you sure you want to delete game")
+            .setTitle("Delete")
+
+        builder.apply {
+            setPositiveButton("Cancle") { dialog, id ->
+                Toast.makeText(context, "cancled is clicked", Toast.LENGTH_SHORT).show()
+            }
+            setNegativeButton("Remove") { dialog, id ->
+                viewModel.deleteGame();
+            }
+        }
+        val dialog: AlertDialog? = builder.create()
+
+        dialog!!.show()
     }
 
     private fun navigateToSnookerGamesFragment() {

@@ -70,6 +70,20 @@ class UpdateTennisGameViewModel(eventId: String, teamAName: String, teamBName: S
         }
     }
 
+    fun deleteGame(){
+        coroutineScope.launch {
+            val deleteGameDeferred = API.retrofitService.deleteTennisGame(_eventId)
+            try {
+                val result = deleteGameDeferred.await()
+                _message.value = "deleted successful"
+                _navigation.value = true;
+            }catch (t: Throwable){
+                _message.value = "error updating game data: " + t.toString();
+                Log.i("UpdateTennisGameViewModel", _message.value.toString())
+            }
+        }
+    }
+
     fun doneNavigating(){
         _navigation.value = false;
     }
