@@ -179,7 +179,7 @@
     <fragment
         android:id="@+id/getFilledFormsFragment"
         android:name="com.aryandadhich.urja10.ui.forms.GetFilledFormsFragment"
-        android:label="GetFilledFormsFragment" >
+        android:label="Filled Forms">
         <action
             android:id="@+id/action_getFilledFormsFragment_to_availableFormsFragment"
             app:destination="@id/availableFormsFragment" />

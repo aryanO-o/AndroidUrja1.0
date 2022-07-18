@@ -38,21 +38,26 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.viewModel = viewModel;
-        binding.setLifecycleOwner(this)
+        if(context?.let { checkForInternet(it) } == false){
+            findNavController().navigate(HomeFragmentDirections.actionNavHomeToNoInternetFragment())
 
-        binding.noticeFragmentRecyclerView.adapter = NoticeAdapter(updateNoticeListener = UpdateNoticeListener{
-            noticeId->
+        }else{
+            binding.viewModel = viewModel;
+            binding.setLifecycleOwner(this)
+
+            binding.noticeFragmentRecyclerView.adapter = NoticeAdapter(updateNoticeListener = UpdateNoticeListener{
+                    noticeId->
                 findNavController().navigate(HomeFragmentDirections.actionNavHomeToEditNoticeFragment(noticeId));
-        })
+            })
 
-        viewModel.loadData.observe(viewLifecycleOwner, Observer {
-            if(it)
-                removeLoadingScreen()
-        })
+            viewModel.loadData.observe(viewLifecycleOwner, Observer {
+                if(it)
+                    removeLoadingScreen()
+            })
 
-        binding.addNoticeFab.setOnClickListener{
-            navigateToAddNotice()
+            binding.addNoticeFab.setOnClickListener{
+                navigateToAddNotice()
+            }
         }
 
         if(stringUtils.role == ""){
