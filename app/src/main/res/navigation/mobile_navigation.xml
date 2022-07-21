@@ -68,6 +68,7 @@
         <action
             android:id="@+id/action_addHouseCaptainFragment_to_houseCaptainFragment"
             app:destination="@id/houseCaptainFragment"
+            app:popUpTo="@id/houseCaptainFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -77,6 +78,7 @@
         <action
             android:id="@+id/action_houseCaptainEditFragment_to_houseCaptainFragment"
             app:destination="@id/houseCaptainFragment"
+            app:popUpTo="@id/houseCaptainFragment"
             app:popUpToInclusive="true" />
         <argument
             android:name="loginId"
@@ -99,7 +101,9 @@
         android:label="Add Coordinator">
         <action
             android:id="@+id/action_addCoordinatorFragment_to_coordinatorFragment"
-            app:destination="@id/coordinatorFragment" />
+            app:destination="@id/coordinatorFragment"
+            app:popUpTo="@id/coordinatorFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/coordinatorEditFragment"
@@ -111,7 +115,9 @@
             app:argType="string" />
         <action
             android:id="@+id/action_coordinatorEditFragment_to_coordinatorFragment"
-            app:destination="@id/coordinatorFragment" />
+            app:destination="@id/coordinatorFragment"
+            app:popUpTo="@id/coordinatorFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/eventCoordinatorFragment"
@@ -130,7 +136,9 @@
         android:label="Add Event Coodinator" >
         <action
             android:id="@+id/action_addEventCoordinatorFragment_to_eventCoordinatorFragment"
-            app:destination="@id/eventCoordinatorFragment" />
+            app:destination="@id/eventCoordinatorFragment"
+            app:popUpTo="@id/eventCoordinatorFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/eventCoordinatorEditFragment"
@@ -138,7 +146,9 @@
         android:label="Edit Event Coordinator">
         <action
             android:id="@+id/action_eventCoordinatorEditFragment_to_eventCoordinatorFragment"
-            app:destination="@id/eventCoordinatorFragment" />
+            app:destination="@id/eventCoordinatorFragment"
+            app:popUpTo="@id/eventCoordinatorFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="loginId"
             app:argType="string" />
@@ -163,7 +173,9 @@
         android:label="Add Form">
         <action
             android:id="@+id/action_addFormFragment_to_availableFormsFragment"
-            app:destination="@id/availableFormsFragment" />
+            app:destination="@id/availableFormsFragment"
+            app:popUpTo="@id/availableFormsFragment"
+            app:popUpToInclusive="true" />
     </dialog>
     <fragment
         android:id="@+id/fillFormFragment"
@@ -171,7 +183,9 @@
         android:label="Fill Form">
         <action
             android:id="@+id/action_fillFormFragment_to_availableFormsFragment"
-            app:destination="@id/availableFormsFragment" />
+            app:destination="@id/availableFormsFragment"
+            app:popUpTo="@id/availableFormsFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="formId"
             app:argType="integer" />
@@ -182,7 +196,9 @@
         android:label="Filled Forms">
         <action
             android:id="@+id/action_getFilledFormsFragment_to_availableFormsFragment"
-            app:destination="@id/availableFormsFragment" />
+            app:destination="@id/availableFormsFragment"
+            app:popUpTo="@id/availableFormsFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="formId"
             app:argType="integer" />
@@ -204,7 +220,9 @@
         android:label="Add Player" >
         <action
             android:id="@+id/action_addGamePlayersFragment_to_playerFragment"
-            app:destination="@id/playerFragment" />
+            app:destination="@id/playerFragment"
+            app:popUpTo="@id/playerFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="teamId"
             app:argType="string" />
@@ -226,7 +244,9 @@
         android:label="Add Team">
         <action
             android:id="@+id/action_addTeamFragment_to_teamFragment"
-            app:destination="@id/teamFragment" />
+            app:destination="@id/teamFragment"
+            app:popUpTo="@id/teamFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/basketballFragment"
@@ -248,7 +268,9 @@
         android:label="Add Basketball Game">
         <action
             android:id="@+id/action_addBasketballGameFragment_to_basketballFragment"
-            app:destination="@id/basketballFragment" />
+            app:destination="@id/basketballFragment"
+            app:popUpTo="@id/basketballFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/gameInfoFragment"
@@ -264,7 +286,9 @@
         android:label="Update Basketball Game">
         <action
             android:id="@+id/action_updateBasketballGameFragment_to_basketballFragment"
-            app:destination="@id/basketballFragment" />
+            app:destination="@id/basketballFragment"
+            app:popUpTo="@id/basketballFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -295,7 +319,9 @@
         android:label="Add Football Game">
         <action
             android:id="@+id/action_addFootballGameFragment_to_footballFragment"
-            app:destination="@id/footballFragment" />
+            app:destination="@id/footballFragment"
+            app:popUpTo="@id/footballFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateFootballGameFragment"
@@ -303,7 +329,9 @@
         android:label="Update Football Game">
         <action
             android:id="@+id/action_updateFootballGameFragment_to_footballFragment"
-            app:destination="@id/footballFragment" />
+            app:destination="@id/footballFragment"
+            app:popUpTo="@id/footballFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -334,7 +362,9 @@
         android:label="Add Badminton Game">
         <action
             android:id="@+id/action_addBadmintonGameFragment_to_badmintonFragment"
-            app:destination="@id/badmintonFragment" />
+            app:destination="@id/badmintonFragment"
+            app:popUpTo="@id/badmintonFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateBadmintonGameFragment"
@@ -342,7 +372,9 @@
         android:label="Update Badminton Game">
         <action
             android:id="@+id/action_updateBadmintonGameFragment_to_badmintonFragment"
-            app:destination="@id/badmintonFragment" />
+            app:destination="@id/badmintonFragment"
+            app:popUpTo="@id/badmintonFragment"
+            app:popUpToInclusive="true" />
         <argument android:name="eventId"
             app:argType="string" />
         <argument
@@ -372,7 +404,9 @@
         android:label="Add Tennis Game">
         <action
             android:id="@+id/action_addTennisGameFragment_to_tennisFragment"
-            app:destination="@id/tennisFragment" />
+            app:destination="@id/tennisFragment"
+            app:popUpTo="@id/tennisFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateTennisGameFragment"
@@ -380,7 +414,9 @@
         android:label="Update Tennis Game">
         <action
             android:id="@+id/action_updateTennisGameFragment_to_tennisFragment"
-            app:destination="@id/tennisFragment" />
+            app:destination="@id/tennisFragment"
+            app:popUpTo="@id/tennisFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -410,7 +446,9 @@
         android:label="Add Table Tennis Game">
         <action
             android:id="@+id/action_addTableTennisGameFragment_to_tableTennisFragment"
-            app:destination="@id/tableTennisFragment" />
+            app:destination="@id/tableTennisFragment"
+            app:popUpTo="@id/tableTennisFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateTableTennisGameFragment"
@@ -418,7 +456,9 @@
         android:label="Update Table Tennis Game">
         <action
             android:id="@+id/action_updateTableTennisGameFragment_to_tableTennisFragment"
-            app:destination="@id/tableTennisFragment" />
+            app:destination="@id/tableTennisFragment"
+            app:popUpTo="@id/tableTennisFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -449,7 +489,9 @@
         android:label="Add Squash Game">
         <action
             android:id="@+id/action_addSquashGameFragment_to_squashFragment"
-            app:destination="@id/squashFragment" />
+            app:destination="@id/squashFragment"
+            app:popUpTo="@id/squashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateSquashGameFragment"
@@ -457,7 +499,9 @@
         android:label="Update Squash Game">
         <action
             android:id="@+id/action_updateSquashGameFragment_to_squashFragment"
-            app:destination="@id/squashFragment" />
+            app:destination="@id/squashFragment"
+            app:popUpTo="@id/squashFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -488,7 +532,9 @@
         android:label="AddSnookerGameFragment" >
         <action
             android:id="@+id/action_addSnookerGameFragment_to_snookerFragment"
-            app:destination="@id/snookerFragment" />
+            app:destination="@id/snookerFragment"
+            app:popUpTo="@id/snookerFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateSnookerGameFragment"
@@ -496,7 +542,9 @@
         android:label="Update Snooker Game">
         <action
             android:id="@+id/action_updateSnookerGameFragment_to_snookerFragment"
-            app:destination="@id/snookerFragment" />
+            app:destination="@id/snookerFragment"
+            app:popUpTo="@id/snookerFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -527,7 +575,9 @@
         android:label="Add Volleyball Game">
         <action
             android:id="@+id/action_addVolleyballGameFragment_to_volleyballFragment"
-            app:destination="@id/volleyballFragment" />
+            app:destination="@id/volleyballFragment"
+            app:popUpTo="@id/volleyballFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateVolleyballGameFragment"
@@ -535,7 +585,9 @@
         android:label="Update Volleyball Game">
         <action
             android:id="@+id/action_updateVolleyballGameFragment_to_volleyballFragment"
-            app:destination="@id/volleyballFragment" />
+            app:destination="@id/volleyballFragment"
+            app:popUpTo="@id/volleyballFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -566,7 +618,9 @@
         android:label="Add Cricket Game">
         <action
             android:id="@+id/action_addCricketGameFragment_to_cricketFragment"
-            app:destination="@id/cricketFragment" />
+            app:destination="@id/cricketFragment"
+            app:popUpTo="@id/cricketFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateCricketGameFragment"
@@ -574,7 +628,9 @@
         android:label="Update Cricket Game">
         <action
             android:id="@+id/action_updateCricketGameFragment_to_cricketFragment"
-            app:destination="@id/cricketFragment" />
+            app:destination="@id/cricketFragment"
+            app:popUpTo="@id/cricketFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -605,7 +661,9 @@
         android:label="Add Chess Game">
         <action
             android:id="@+id/action_addChessGameFragment_to_chessFragment"
-            app:destination="@id/chessFragment" />
+            app:destination="@id/chessFragment"
+            app:popUpTo="@id/chessFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateChessGameFragment"
@@ -613,7 +671,9 @@
         android:label="Update Chess Game">
         <action
             android:id="@+id/action_updateChessGameFragment_to_chessFragment"
-            app:destination="@id/chessFragment" />
+            app:destination="@id/chessFragment"
+            app:popUpTo="@id/chessFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
@@ -638,7 +698,9 @@
         android:label="Add Carrom Games">
         <action
             android:id="@+id/action_addCarromGameFragment_to_carromFragment"
-            app:destination="@id/carromFragment" />
+            app:destination="@id/carromFragment"
+            app:popUpTo="@id/carromFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/updateCarromGameFragment"
@@ -646,7 +708,9 @@
         android:label="Update Carrom Game">
         <action
             android:id="@+id/action_updateCarromGameFragment_to_carromFragment"
-            app:destination="@id/carromFragment" />
+            app:destination="@id/carromFragment"
+            app:popUpTo="@id/carromFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="eventId"
             app:argType="string" />
