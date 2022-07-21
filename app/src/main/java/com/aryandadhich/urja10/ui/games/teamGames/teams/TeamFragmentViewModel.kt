@@ -19,6 +19,10 @@ class TeamFragmentViewModel:ViewModel() {
     val response: LiveData<String>
     get() = _response
 
+    private var _loadData = MutableLiveData<Boolean>()
+    val loadData: LiveData<Boolean>
+        get() = _loadData;
+
     private var viewModelJob = Job()
     private var coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main);
 
@@ -33,6 +37,7 @@ class TeamFragmentViewModel:ViewModel() {
                 var result = getDeferredTeam.await()
                 _response.value = "successfull"
                 _teams.value = result
+                _loadData.value = true;
             }catch (t: Throwable){
                 _response.value = "failure"
                 Log.i("TeamFragmentViewModel", "yaha: ${t.message}");

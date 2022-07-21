@@ -39,6 +39,11 @@ class TeamFragment : Fragment() {
             callViewModelDeleteTeam(teamId);
         })
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         if(role == "") binding.addTeamFab.visibility = View.GONE;
 
         binding.addTeamFab.setOnClickListener{
@@ -67,6 +72,10 @@ class TeamFragment : Fragment() {
         val dialog: AlertDialog? = builder.create()
 
         dialog!!.show()
+    }
+
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
     }
 
     private fun navigateToAddTeamFragment() {

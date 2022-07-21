@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.aryandadhich.urja10.databinding.FragmentPlayerBinding
@@ -43,6 +44,11 @@ class PlayerFragment : Fragment() {
             navigateToAddGamePlayerFragment(teamId)
         }
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         if(role == "supervisor" || role == "house-captain" || role == "coordinator" || role == "event-coordinator")
             binding.addGamePlayersFab.visibility = View.VISIBLE
 
@@ -51,6 +57,10 @@ class PlayerFragment : Fragment() {
 
     private fun navigateToAddGamePlayerFragment(teamId: String) {
         findNavController().navigate(PlayerFragmentDirections.actionPlayerFragmentToAddGamePlayersFragment(teamId))
+    }
+
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
     }
 
     private fun onDeleteBtnClicked(teamId: String, playerId: String){

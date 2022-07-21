@@ -45,6 +45,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:focusable="true" />
 
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <ProgressBar
+                android:id="@+id/loadingPanelProgessBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/bright_red"
+                android:indeterminate="true" />
+        </RelativeLayout>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/update_forms_fab"
             android:layout_width="wrap_content"

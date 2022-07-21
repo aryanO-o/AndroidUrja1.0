@@ -31,6 +31,20 @@
             android:dividerHeight="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <ProgressBar
+                android:id="@+id/loadingPanelProgessBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/bright_red"
+                android:indeterminate="true" />
+        </RelativeLayout>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_game_players_fab"
             android:layout_width="wrap_content"

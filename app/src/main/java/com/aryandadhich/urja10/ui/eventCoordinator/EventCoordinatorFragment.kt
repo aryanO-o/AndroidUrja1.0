@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.get
@@ -44,6 +45,11 @@ class EventCoordinatorFragment : Fragment() {
             }
         })
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         if(role == "supervisor" || role == "house-captain" || role == "coordinator"){
             binding.addEventCoordinatorFab.visibility = View.VISIBLE;
         }
@@ -57,5 +63,8 @@ class EventCoordinatorFragment : Fragment() {
         return binding.root;
     }
 
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
+    }
 
 }

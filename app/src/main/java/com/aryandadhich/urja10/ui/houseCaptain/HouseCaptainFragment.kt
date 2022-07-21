@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -41,6 +42,11 @@ class HouseCaptainFragment : Fragment() {
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         if(role == "supervisor")
         {
             binding.addHouseCaptainFab.visibility = View.VISIBLE
@@ -52,5 +58,8 @@ class HouseCaptainFragment : Fragment() {
         return binding.root
     }
 
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
+    }
 
 }

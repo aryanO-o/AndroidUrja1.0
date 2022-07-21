@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -46,11 +47,20 @@ class CoordinatorFragment : Fragment() {
             binding.addCoordinatorFab.visibility = View.VISIBLE;
         }
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         binding.addCoordinatorFab.setOnClickListener{
             it.findNavController().navigate(CoordinatorFragmentDirections.actionCoordinatorFragmentToAddCoordinatorFragment())
         }
 
         return binding.root;
+    }
+
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
     }
 
 }

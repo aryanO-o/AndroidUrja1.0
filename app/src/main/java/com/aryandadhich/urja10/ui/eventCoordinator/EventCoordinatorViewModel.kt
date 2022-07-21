@@ -20,6 +20,10 @@ class EventCoordinatorViewModel: ViewModel() {
     val properties: LiveData<List<EventCoordinator>?>
         get() = _properties
 
+    private var _loadData = MutableLiveData<Boolean>()
+    val loadData: LiveData<Boolean>
+        get() = _loadData;
+
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
@@ -34,6 +38,7 @@ class EventCoordinatorViewModel: ViewModel() {
                 var listResult = getEventCoordinatorDeffered.await()
                 _status.value = "success: ${listResult.size} EventCoordinator."
                 _properties.value = listResult;
+                _loadData.value = true;
                 Log.i("CoordinatorViewModel", "$listResult");
             }catch (t: Throwable){
                 _status.value = "failure + " + t.message

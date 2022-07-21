@@ -48,6 +48,11 @@ class AvailableFormsFragment : Fragment() {
             findNavController().navigate(AvailableFormsFragmentDirections.actionAvailableFormsFragmentToGetFilledFormsFragment(formId))
         })
 
+        viewModel.loadData.observe(viewLifecycleOwner, Observer {
+            if(it)
+                removeLoadingScreen()
+        })
+
         if(stringUtils.role == "supervisor" || stringUtils.role == "house-captain" || stringUtils.role == "coordinator"){
             binding.addFormsFab.visibility = View.VISIBLE;
         }
@@ -79,6 +84,9 @@ class AvailableFormsFragment : Fragment() {
         val dialog: AlertDialog? = builder.create()
 
         dialog!!.show()
+    }
+    private fun removeLoadingScreen() {
+        binding.loadingPanel.visibility = View.GONE
     }
 
     companion object{

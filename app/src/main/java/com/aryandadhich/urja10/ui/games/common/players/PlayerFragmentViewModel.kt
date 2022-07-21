@@ -19,6 +19,10 @@ class PlayerFragmentViewModel(teamId: String): ViewModel() {
     val properties: LiveData<List<Player>>
         get() = _properties
 
+    private var _loadData = MutableLiveData<Boolean>()
+    val loadData: LiveData<Boolean>
+        get() = _loadData;
+
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
@@ -36,6 +40,7 @@ class PlayerFragmentViewModel(teamId: String): ViewModel() {
                 var listResult = getPlayersDeffered.await()
                 _status.value = "success: ${listResult.size} Players."
                 _properties.value = listResult;
+                _loadData.value = true;
             }catch (t: Throwable){
                 _status.value = "failure + " + t.message
                 Log.i("PlayerFragmentViewModel", "yaha: ${t.message}")

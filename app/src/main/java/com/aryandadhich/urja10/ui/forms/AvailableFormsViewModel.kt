@@ -20,6 +20,10 @@ class AvailableFormsViewModel: ViewModel() {
     val properties: LiveData<List<Form>?>
         get() = _properties
 
+    private var _loadData = MutableLiveData<Boolean>()
+    val loadData: LiveData<Boolean>
+        get() = _loadData;
+
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
@@ -34,6 +38,7 @@ class AvailableFormsViewModel: ViewModel() {
                 var listResult = getFormDeffered.await()
                 _status.value = "success: ${listResult.size} Coordinator."
                 _properties.value = listResult;
+                _loadData.value = true;
                 Log.i("AvailableFormsViewModel", "$listResult");
             }catch (t: Throwable){
                 _status.value = "failure + " + t.message
