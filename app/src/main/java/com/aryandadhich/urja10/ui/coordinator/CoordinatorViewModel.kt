@@ -31,7 +31,7 @@ class CoordinatorViewModel: ViewModel() {
         getCoordinatorData()
     }
 
-    private fun getCoordinatorData() {
+    fun getCoordinatorData() {
         coroutineScope.launch {
             var getCoordinatorDeffered = API.retrofitService.getCoordinators("coordinator")
             try {

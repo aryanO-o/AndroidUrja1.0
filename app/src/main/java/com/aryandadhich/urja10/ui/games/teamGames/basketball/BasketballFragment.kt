@@ -50,7 +50,17 @@ class BasketballFragment : Fragment() {
             }
         })
 
+        val pullToRefresh = binding.refreshFragment
+        pullToRefresh.setOnRefreshListener {
+            refreshData() // your code
+            pullToRefresh.isRefreshing = false
+        }
+
         return binding.root
+    }
+
+    private fun refreshData() {
+        viewModel.fetchBasketballGames()
     }
 
     private fun removeLoadingScreen() {

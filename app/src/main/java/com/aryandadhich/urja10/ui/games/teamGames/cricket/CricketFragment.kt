@@ -47,7 +47,17 @@ class CricketFragment : Fragment() {
                 removeLoadingScreen()
         })
 
+        val pullToRefresh = binding.refreshFragment
+        pullToRefresh.setOnRefreshListener {
+            refreshData() // your code
+            pullToRefresh.isRefreshing = false
+        }
+
         return binding.root
+    }
+
+    private fun refreshData() {
+        viewModel.fetchCricketGames();
     }
 
     private fun navigateToUpdateCricketGameFragment(game: CricketGame) {

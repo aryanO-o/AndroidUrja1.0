@@ -61,8 +61,17 @@ class AvailableFormsFragment : Fragment() {
             dialog.show( parentFragmentManager, "Create Form")
         }
 
+        val pullToRefresh = binding.refreshFragment
+        pullToRefresh.setOnRefreshListener {
+            refreshData() // your code
+            pullToRefresh.isRefreshing = false
+        }
 
         return binding.root;
+    }
+
+    private fun refreshData() {
+        viewModel.getFormsData();
     }
 
     private fun onDeleteButtonClicked(form: Form) {

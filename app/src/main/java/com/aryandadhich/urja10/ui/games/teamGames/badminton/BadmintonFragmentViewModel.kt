@@ -28,7 +28,7 @@ class BadmintonFragmentViewModel: ViewModel() {
         fetchBadmintonGames();
     }
 
-    private fun fetchBadmintonGames() {
+    fun fetchBadmintonGames() {
         coroutineScope.launch {
             val getBadmintonDeferred = API.retrofitService.getAllBadmintonGames();
             try {

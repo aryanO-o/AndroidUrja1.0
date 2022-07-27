@@ -9,10 +9,16 @@
             type="com.aryandadhich.urja10.ui.games.teamGames.snooker.SnookerFragmentViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.games.teamGames.snooker.SnookerFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/snooker_fragment_recycler_view"
@@ -52,4 +58,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

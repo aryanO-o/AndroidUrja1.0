@@ -46,8 +46,7 @@
             android:textColor="@color/blue"
             android:text="@{@string/form_to_select(form.toSelect)}"
             tools:text="TextView"
-            android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

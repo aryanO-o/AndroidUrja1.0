@@ -49,7 +49,17 @@ class SnookerFragment : Fragment() {
                 removeLoadingScreen()
         })
 
+        val pullToRefresh = binding.refreshFragment
+        pullToRefresh.setOnRefreshListener {
+            refreshData() // your code
+            pullToRefresh.isRefreshing = false
+        }
+
         return binding.root
+    }
+
+    private fun refreshData() {
+        viewModel.fetchSnookerGames()
     }
 
     private fun navigateToUpdateSnookerGameFragment(game: SnookerGame) {

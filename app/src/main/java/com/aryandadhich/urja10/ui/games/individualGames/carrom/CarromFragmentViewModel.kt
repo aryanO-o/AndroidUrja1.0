@@ -30,7 +30,7 @@ class CarromFragmentViewModel: ViewModel() {
         fetchCarromGames();
     }
 
-    private fun fetchCarromGames() {
+    fun fetchCarromGames() {
         coroutineScope.launch {
             val getCarromDeferred = API.retrofitService.getAllCarromGames();
             try {

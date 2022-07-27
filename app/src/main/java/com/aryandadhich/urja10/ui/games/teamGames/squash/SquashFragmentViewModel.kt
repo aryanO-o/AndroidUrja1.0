@@ -30,7 +30,7 @@ class SquashFragmentViewModel: ViewModel() {
         fetchSquashGames();
     }
 
-    private fun fetchSquashGames() {
+    fun fetchSquashGames() {
         coroutineScope.launch {
             val getSquashDeferred = API.retrofitService.getAllSquashGames();
             try {

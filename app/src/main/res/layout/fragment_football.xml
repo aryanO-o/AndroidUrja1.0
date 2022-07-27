@@ -10,10 +10,15 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.games.teamGames.football.FootballFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/football_fragment_recycler_view"
@@ -51,4 +56,6 @@
             android:layout_margin="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

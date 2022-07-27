@@ -31,7 +31,7 @@ class EventCoordinatorViewModel: ViewModel() {
         getEventCoordinatorData()
     }
 
-    private fun getEventCoordinatorData() {
+     fun getEventCoordinatorData() {
         coroutineScope.launch {
             var getEventCoordinatorDeffered = API.retrofitService.getEventCoordinators("event-coordinator")
             try {

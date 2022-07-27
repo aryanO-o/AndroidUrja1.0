@@ -29,7 +29,7 @@ class VolleyballFragmentViewModel : ViewModel() {
         fetchVolleyballGames();
     }
 
-    private fun fetchVolleyballGames() {
+    fun fetchVolleyballGames() {
         coroutineScope.launch {
             val getVolleyballDeferred = API.retrofitService.getAllVolleyballGames();
             try {

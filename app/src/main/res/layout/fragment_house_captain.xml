@@ -9,10 +9,16 @@
             type="com.aryandadhich.urja10.ui.houseCaptain.HouseCaptainViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_house_captains"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.houseCaptain.HouseCaptainFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -60,4 +66,6 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

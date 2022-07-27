@@ -1,21 +1,19 @@
 package com.aryandadhich.urja10.ui.houseCaptain
 
+import android.R
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.aryandadhich.urja10.R
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aryandadhich.urja10.databinding.FragmentHouseCaptainBinding
-import com.aryandadhich.urja10.databinding.HouseCaptainListItemBinding
 import com.aryandadhich.urja10.utils.stringUtils.Companion.role
-import kotlin.math.log
 
 
 class HouseCaptainFragment : Fragment() {
@@ -24,6 +22,9 @@ class HouseCaptainFragment : Fragment() {
     val binding get() = _binding!!
 
     private lateinit var viewModel: HouseCaptainViewModel
+
+
+
 
 
     override fun onCreateView(
@@ -55,7 +56,21 @@ class HouseCaptainFragment : Fragment() {
         binding.addHouseCaptainFab.setOnClickListener{
             it.findNavController().navigate(HouseCaptainFragmentDirections.actionHouseCaptainFragmentToAddHouseCaptainFragment())
         }
+
+        val pullToRefresh = binding.refreshHouseCaptains
+        pullToRefresh.setColorSchemeColors(R.color.holo_orange_dark)
+        pullToRefresh.setOnRefreshListener {
+            refreshData() // your code
+            pullToRefresh.isRefreshing = false
+        }
+
+
+
         return binding.root
+    }
+
+    private fun refreshData() {
+        viewModel.getHouseCaptainData();
     }
 
     private fun removeLoadingScreen() {

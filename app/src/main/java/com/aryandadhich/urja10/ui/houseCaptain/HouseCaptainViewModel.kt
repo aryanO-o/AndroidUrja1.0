@@ -32,7 +32,7 @@ class HouseCaptainViewModel: ViewModel() {
         getHouseCaptainData()
     }
 
-    private fun getHouseCaptainData() {
+     fun getHouseCaptainData() {
         coroutineScope.launch {
             var getPlayersDeffered = API.retrofitService.getRolePlayers("house-captain")
             try {

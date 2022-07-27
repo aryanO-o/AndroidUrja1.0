@@ -9,10 +9,15 @@
             type="com.aryandadhich.urja10.ui.games.teamGames.volleyball.VolleyballFragmentViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.games.teamGames.volleyball.VolleyballFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/volleyball_fragment_recycler_view"
@@ -50,4 +55,6 @@
             android:layout_margin="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>
