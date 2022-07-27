@@ -64,7 +64,17 @@ class HomeFragment : Fragment() {
             binding.addNoticeFab.visibility = View.GONE
         }
 
+        val pullToRefresh = binding.refreshFragment
+        pullToRefresh.setOnRefreshListener {
+            refreshData() // your code
+            pullToRefresh.isRefreshing = false
+        }
+
         return binding.root
+    }
+
+    private fun refreshData() {
+        viewModel.getNoticesData()
     }
 
     private fun navigateToAddNotice() {

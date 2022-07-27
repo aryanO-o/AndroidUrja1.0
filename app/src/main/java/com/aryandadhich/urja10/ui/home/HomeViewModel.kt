@@ -26,10 +26,10 @@ class HomeViewModel : ViewModel() {
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
     init {
-        getHouseCaptainData()
+        getNoticesData()
     }
 
-    private fun getHouseCaptainData() {
+    fun getNoticesData() {
         coroutineScope.launch {
             var getNotices = API.retrofitService.getAllNotices()
             try {
