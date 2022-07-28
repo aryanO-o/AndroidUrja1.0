@@ -49,8 +49,14 @@ class PlayerFragment : Fragment() {
                 removeLoadingScreen()
         })
 
-        if(role == "supervisor" || role == "house-captain" || role == "coordinator" || role == "event-coordinator")
+        viewModel.response.observe(viewLifecycleOwner, Observer {
+            removeLoadingScreen();
+        })
+
+        if(role == "supervisor" || role == "house-captain" || role == "coordinator" || role == "event-coordinator") {
             binding.addGamePlayersFab.visibility = View.VISIBLE
+        }
+
 
         return binding.root;
     }
