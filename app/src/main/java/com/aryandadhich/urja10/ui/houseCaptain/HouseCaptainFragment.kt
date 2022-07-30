@@ -60,7 +60,8 @@ class HouseCaptainFragment : Fragment() {
         val pullToRefresh = binding.refreshHouseCaptains
         pullToRefresh.setColorSchemeColors(R.color.holo_orange_dark)
         pullToRefresh.setOnRefreshListener {
-            refreshData() // your code
+            refreshData()
+            startLoadingScreen()
             pullToRefresh.isRefreshing = false
         }
 
@@ -77,4 +78,7 @@ class HouseCaptainFragment : Fragment() {
         binding.loadingPanel.visibility = View.GONE
     }
 
+    private fun startLoadingScreen() {
+        binding.loadingPanel.visibility = View.VISIBLE
+    }
 }

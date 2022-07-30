@@ -52,7 +52,8 @@ class TeamFragment : Fragment() {
 
         val pullToRefresh = binding.refreshFragment
         pullToRefresh.setOnRefreshListener {
-            refreshData() // your code
+            refreshData()
+            startLoadingScreen()
             pullToRefresh.isRefreshing = false
         }
 
@@ -86,6 +87,9 @@ class TeamFragment : Fragment() {
 
     private fun removeLoadingScreen() {
         binding.loadingPanel.visibility = View.GONE
+    }
+    private fun startLoadingScreen() {
+        binding.loadingPanel.visibility = View.VISIBLE
     }
 
     private fun navigateToAddTeamFragment() {
