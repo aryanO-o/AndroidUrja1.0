@@ -48,7 +48,7 @@
     <fragment
         android:id="@+id/noInternetFragment"
         android:name="com.aryandadhich.urja10.ui.noInternet.NoInternetFragment"
-        android:label="Please Yaar"
+        android:label="No Internet"
         tools:layout="@layout/fragment_no_internet" />
     <fragment
         android:id="@+id/houseCaptainFragment"
@@ -515,7 +515,7 @@
     <fragment
         android:id="@+id/snookerFragment"
         android:name="com.aryandadhich.urja10.ui.games.teamGames.snooker.SnookerFragment"
-        android:label="SnookerFragment" >
+        android:label="Snooker Games">
         <action
             android:id="@+id/action_snookerFragment_to_addSnookerGameFragment"
             app:destination="@id/addSnookerGameFragment" />
@@ -529,7 +529,7 @@
     <fragment
         android:id="@+id/addSnookerGameFragment"
         android:name="com.aryandadhich.urja10.ui.games.teamGames.snooker.AddSnookerGameFragment"
-        android:label="AddSnookerGameFragment" >
+        android:label="Add Snooker Game">
         <action
             android:id="@+id/action_addSnookerGameFragment_to_snookerFragment"
             app:destination="@id/snookerFragment"
