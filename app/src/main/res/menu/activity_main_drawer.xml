@@ -19,7 +19,7 @@
         <item
             android:id="@+id/eventCoordinatorFragment"
             android:icon="@drawable/people_icon"
-            android:title="Event_Coordinator" />
+            android:title="Event-Coordinator" />
         <item
             android:id="@+id/teamFragment"
             android:icon="@drawable/people_icon"

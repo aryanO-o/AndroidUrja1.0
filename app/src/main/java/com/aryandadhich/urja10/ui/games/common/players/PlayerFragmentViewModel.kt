@@ -33,7 +33,6 @@ class PlayerFragmentViewModel(teamId: String): ViewModel() {
     }
 
     private fun getPlayersData() {
-        Log.i("PlayerFragmentViewModel", "I atleast reach here.")
         coroutineScope.launch {
             var getPlayersDeffered = API.retrofitService.getAllGamePlayers(teamId = teamId)
             try {
