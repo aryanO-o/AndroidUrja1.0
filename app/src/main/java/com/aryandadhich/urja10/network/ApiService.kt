@@ -64,8 +64,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
 
-//private const val BASE_URL = "https://stark-citadel-61029.herokuapp.com/"
-private const val BASE_URL = "http://192.168.137.1:8000/"
+private const val BASE_URL = "https://stark-citadel-61029.herokuapp.com/"
+//private const val BASE_URL = "http://192.168.137.1:8000/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())

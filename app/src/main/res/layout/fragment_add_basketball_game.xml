@@ -10,114 +10,120 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.games.teamGames.basketball.AddBasketballGameFragment">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/basketball_add_game_basketball_icon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/basketball_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/basketball_add_game_select_team_a_txt"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16sp"
-            android:text="Select Team A"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_basketball_icon" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/basketball_add_game_team_a_name_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:fontFamily="@font/bungee_shade"
-            android:text="-select team from below-"
-            android:textColor="@color/blue"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_select_team_a_txt" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/basketball_add_game_basketball_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/basketball_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/basketball_add_game_team_a_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_margin="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_a_name_text"
-            app:teamsListData="@{viewModel.team}" />
+            <TextView
+                android:id="@+id/basketball_add_game_select_team_a_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16sp"
+                android:text="Select Team A"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_basketball_icon" />
 
-        <TextView
-            android:id="@+id/basketball_add_game_select_team_b_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16sp"
-            android:text="Select Team B"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_a_recycler_view" />
+            <TextView
+                android:id="@+id/basketball_add_game_team_a_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/bungee_shade"
+                android:text="-select team from below-"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_select_team_a_txt" />
 
-        <TextView
-            android:id="@+id/basketball_add_game_team_b_name_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:fontFamily="@font/bungee_shade"
-            android:text="-select team from below-"
-            android:textColor="@color/blue"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_select_team_b_txt" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/basketball_add_game_team_a_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_margin="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_a_name_text"
+                app:teamsListData="@{viewModel.team}" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/basketball_add_game_team_b_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_margin="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_b_name_text"
-            app:teamsListData="@{viewModel.team}" />
+            <TextView
+                android:id="@+id/basketball_add_game_select_team_b_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16sp"
+                android:text="Select Team B"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_a_recycler_view" />
 
-        <Button
-            android:id="@+id/basketball_add_game_add_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="add"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/basketball_add_game_cancle_btn"
-            app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_b_recycler_view" />
+            <TextView
+                android:id="@+id/basketball_add_game_team_b_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/bungee_shade"
+                android:text="-select team from below-"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_select_team_b_txt" />
 
-        <Button
-            android:id="@+id/basketball_add_game_cancle_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="cancle"
-            app:layout_constraintBottom_toBottomOf="@id/basketball_add_game_add_btn"
-            app:layout_constraintEnd_toStartOf="@+id/basketball_add_game_add_btn"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/basketball_add_game_add_btn"
-            app:layout_constraintVertical_bias="0.0" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/basketball_add_game_team_b_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_margin="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_b_name_text"
+                app:teamsListData="@{viewModel.team}" />
+
+            <Button
+                android:id="@+id/basketball_add_game_add_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/basketball_add_game_cancle_btn"
+                app:layout_constraintTop_toBottomOf="@id/basketball_add_game_team_b_recycler_view" />
+
+            <Button
+                android:id="@+id/basketball_add_game_cancle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cancle"
+                app:layout_constraintBottom_toBottomOf="@id/basketball_add_game_add_btn"
+                app:layout_constraintEnd_toStartOf="@+id/basketball_add_game_add_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/basketball_add_game_add_btn"
+                app:layout_constraintVertical_bias="0.0" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
 </layout>
